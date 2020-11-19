@@ -1,10 +1,78 @@
-use BDW56_424r
+USE BDW56_424r
 
-drop table Categories
+DROP TABLE FilmsSupplements
+DROP TABLE FilmsSousTitres
+DROP TABLE FilmsLangues
+DROP TABLE FilmsActeurs
+DROP TABLE Films
+DROP TABLE Exemplaires
+DROP TABLE EmpruntsFilms
+DROP TABLE UtilisateursPreferences
+DROP TABLE Utilisateurs
+DROP TABLE TypesUtilisateur
+DROP TABLE Supplements
+DROP TABLE SousTitres
+DROP TABLE Realisateurs
+DROP TABLE Producteurs
+DROP TABLE Preferences
+DROP TABLE Langues
+DROP TABLE Formats
+DROP TABLE Categories
+DROP TABLE Acteurs
+
+
+CREATE TABLE Acteurs (
+    NoActeur INT NOT NULL PRIMARY KEY,
+    Nom NVARCHAR(50) NOT NULL,
+    Sexe NCHAR(1) NOT NULL
+)
+INSERT INTO Acteurs VALUES
+    (1,'Marlon Brando','H'),
+    (2,'Robert Duvall','H'),
+    (3,'Martin Sheen','H'),
+    (4,'Guy Jodoin','H'),
+    (5,'Sylvie Moreau','F'),
+    (6,'Stéphane Crête','H'),
+    (7,'Georges Clooney','H'),
+    (8,'Brad Pitt','H'),
+    (9,'Matt Damon','H'),
+    (10,'Steven Strait','H'),
+    (11,'Nathanael Baring','H'),
+    (12,'Tim Barlow','H'),
+    (13,'Michel Côté','H'),
+    (14,'Marc-André Grodin','H'),
+    (15,'Danielle Proulx','F'),
+    (16,'Glenn Close','F'),
+    (17,'Gérard Depardieu','H'),
+    (18,'Alice Evans','F'),
+    (19,'Isabelle Blais','F'),
+    (20,'Ricardo Trogi','H'),
+    (21,'Louis-José Houde','H'),
+    (22,'Patrick Huard','H'),
+    (23,'Christopher Heyerdahl','H'),
+    (24,'Julie Lebreton','F'),
+    (25,'Anne Dorval','F'),
+    (26,'Xavier Dolan','H'),
+    (27,'Al Pacino','H'),
+    (28,'Diane Keaton','F'),
+    (29,'Henry Fonda','H'),
+    (30,'Adrien Brody','H'),
+    (31,'Keira Knightley','F'),
+    (32,'Kris Kristofferson','H'),
+    (33,'Tim Robbins','H'),
+    (34,'Morgan Freeman','H'),
+    (35,'Bob Gunton','H'),
+    (36,'Drew Barrymore','F'),
+    (37,'Anjelica Huston','F'),
+    (38,'Drougray Scott','H'),
+    (39,'Liam Neeson','H'),
+    (40,'Bradley Cooper','H');
+
+------------------------------------------------------------------------------
 
 CREATE TABLE Categories (
-    NoCategorie INT,
-    Description VARCHAR(50)
+    NoCategorie INT NOT NULL PRIMARY KEY,
+    Description NVARCHAR(50) NOT NULL
 )
 INSERT INTO Categories VALUES
     (1,'Action'),
@@ -59,59 +127,180 @@ INSERT INTO Categories VALUES
     (50,'Suspense'),
     (51,'Western');
 
-	------------------------------------------------------------------------------
-	CREATE TABLE Acteurs (
-    NoActeur INT,
-    Nom VARCHAR(21) ,
-    Sexe VARCHAR(1)
-)
-INSERT INTO Acteurs VALUES
-    (1,'Marlon Brando','H'),
-    (2,'Robert Duvall','H'),
-    (3,'Martin Sheen','H'),
-    (4,'Guy Jodoin','H'),
-    (5,'Sylvie Moreau','F'),
-    (6,'Stéphane Crête','H'),
-    (7,'Georges Clooney','H'),
-    (8,'Brad Pitt','H'),
-    (9,'Matt Damon','H'),
-    (10,'Steven Strait','H'),
-    (11,'Nathanael Baring','H'),
-    (12,'Tim Barlow','H'),
-    (13,'Michel Côté','H'),
-    (14,'Marc-André Grodin','H'),
-    (15,'Danielle Proulx','F'),
-    (16,'Glenn Close','F'),
-    (17,'Gérard Depardieu','H'),
-    (18,'Alice Evans','F'),
-    (19,'Isabelle Blais','F'),
-    (20,'Ricardo Trogi','H'),
-    (21,'Louis-José Houde','H'),
-    (22,'Patrick Huard','H'),
-    (23,'Christopher Heyerdahl','H'),
-    (24,'Julie Lebreton','F'),
-    (25,'Anne Dorval','F'),
-    (26,'Xavier Dolan','H'),
-    (27,'Al Pacino','H'),
-    (28,'Diane Keaton','F'),
-    (29,'Henry Fonda','H'),
-    (30,'Adrien Brody','H'),
-    (31,'Keira Knightley','F'),
-    (32,'Kris Kristofferson','H'),
-    (33,'Tim Robbins','H'),
-    (34,'Morgan Freeman','H'),
-    (35,'Bob Gunton','H'),
-    (36,'Drew Barrymore','F'),
-    (37,'Anjelica Huston','F'),
-    (38,'Drougray Scott','H'),
-    (39,'Liam Neeson','H'),
-    (40,'Bradley Cooper','H');
-	------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+CREATE TABLE Formats (
+    NoFormat INT NOT NULL PRIMARY KEY,
+    Description NVARCHAR(50) NOT NULL
+);
+INSERT INTO Formats VALUES
+    (1,'Blu-Ray'),
+    (2,'Normal'),
+    (3,'Panoramique');
+------------------------------------------------------------------------------
+CREATE TABLE Langues (
+    NoLangue INT NOT NULL PRIMARY KEY,
+    Langue NVARCHAR(10) NOT NULL
+);
+INSERT INTO Langues VALUES
+    (1,'Français'),
+    (2,'Anglais'),
+    (3,'Espagnol');
+------------------------------------------------------------------------------
+CREATE TABLE Preferences (
+    NoPreference INT NOT NULL PRIMARY KEY,
+    Description NVARCHAR(50) NOT NULL
+);
+INSERT INTO Preferences VALUES
+    (1,'Couleur de fond'),
+    (2,'Couleur du texte'),
+    (3,'Envoi courriel si ajout'),
+    (4,'Envoi courriel si appropriation'),
+    (5,'Envoi courriel si suppression'),
+    (6,'Image de fond'),
+    (7,'Nombre de films par page');
+------------------------------------------------------------------------------
+CREATE TABLE Producteurs (
+    NoProducteur INT NOT NULL PRIMARY KEY,
+    Nom NVARCHAR(50) NOT NULL
+);
+INSERT INTO Producteurs VALUES
+    (1,'Francis Ford Coppola'),
+    (2,'Jerry Weintraub'),
+    (3,'Jim Czarnecki'),
+    (4,'Michael Wimer'),
+    (5,'Pierre Even'),
+    (6,'Edward S. Feldman'),
+    (7,'Nicole Robert'),
+    (8,'Pierre Gendron'),
+    (9,'Xavier Dolan'),
+    (10,'Albert S. Ruddy'),
+    (11,'Henry Fonda'),
+    (12,'George Clooney'),
+    (13,'Niki Marvin'),
+    (14,'Peter Jackson'),
+    (15,'Stephen J. Cannell'),
+    (16,'Oren Peli'),
+    (17,'Matthew Gross');
+------------------------------------------------------------------------------
+CREATE TABLE Realisateurs (
+    NoRealisateur INT NOT NULL PRIMARY KEY,
+    Nom NVARCHAR(50) NOT NULL
+);
+INSERT INTO Realisateurs VALUES
+    (1,'Francis Ford Coppola'),
+    (2,'Claude Desrosiers'),
+    (3,'Steven Soderbergh'),
+    (4,'Michael Moore'),
+    (5,'Roland Emmerich'),
+    (6,'Jean-Marc Vallée'),
+    (7,'Kevin Lima'),
+    (8,'Yves Pelletier'),
+    (9,'Éric Canuel'),
+    (10,'Xavier Dolan'),
+    (11,'Sidney Lumet'),
+    (12,'John Maybury'),
+    (13,'Frank Darabont'),
+    (14,'Andy Tennant'),
+    (15,'Joe Carnahan'),
+    (16,'Oren Peli'),
+    (17,'Philippe Gagnon'),
+    (18,'Julie Taymor');
+------------------------------------------------------------------------------
+CREATE TABLE SousTitres (
+    NoSousTitre INT NOT NULL PRIMARY KEY,
+    LangueSousTitre NVARCHAR(10) NOT NULL
+);
+INSERT INTO SousTitres VALUES
+    (1,'Français'),
+    (2,'Anglais'),
+    (3,'Espagnol');
+------------------------------------------------------------------------------
+CREATE TABLE Supplements (
+    NoSupplement INT NOT NULL PRIMARY KEY,
+    Description NVARCHAR(50) NOT NULL
+);
+INSERT INTO Supplements VALUES
+    (1,'Bande-annonce (Trailer)'),
+    (2,'Bande sonore'),
+    (3,'Commentaires audio'),
+    (4,'Documentaire sur la création du film'),
+    (5,'Fin alternative'),
+    (6,'Gaffes (Bloopers)'),
+    (7,'Galerie d''images'),
+    (8,'Interprètes et artisans'),
+    (9,'Montages de prises ratées'),
+    (10,'Notes de production'),
+    (11,'Sauvegarde d''écran'),
+    (12,'Scènes inédites'),
+    (13,'Scènes supprimées'),
+    (14,'Sélection des scènes'),
+    (15,'Visionneur de scénario-maquette');
+------------------------------------------------------------------------------
+CREATE TABLE TypesUtilisateur (
+    TypeUtilisateur NCHAR(1) NOT NULL PRIMARY KEY,
+    Description NVARCHAR(50) NOT NULL
+);
+INSERT INTO TypesUtilisateur VALUES
+    ('A','Administrateur'),
+    ('S','Super utilisateur'),
+    ('U','Utilisateur');
+------------------------------------------------------------------------------
+CREATE TABLE Utilisateurs (
+    NoUtilisateur INT NOT NULL PRIMARY KEY,
+    NomUtilisateur NVARCHAR(15) NOT NULL, -- initialement NVARCHAR(10)
+    Courriel NVARCHAR(50) NOT NULL,
+    MotPasse INT NOT NULL,
+    TypeUtilisateur NCHAR(1) NOT NULL FOREIGN KEY REFERENCES TypesUtilisateur(TypeUtilisateur)
+);
+INSERT INTO Utilisateurs VALUES
+    (1,'admin','m.airouche@cgodin.qc.ca',99999,'A'),
+    (2,'helene','helene@gmail.com',11111,'S'),
+    (3,'lucille','lucille@gmail.com',22222,'U'),
+    (4,'louis.marie','louis@gmail.com',33333,'U'),
+    (5,'rejean','rejean@gmail.com',44444,'U'),
+    (6,'christian','christian@gmail.com',55555,'U'),
+    (7,'jose','jose@gmail.com',66666,'U');
 
-	CREATE TABLE IF NOT EXISTS EmpruntsFilms (
-    `NoExemplaire` INT,
-    `NoUtilisateur` INT,
-    `DateEmprunt` DATETIME
+------------------------------------------------------------------------------
+CREATE TABLE UtilisateursPreferences (
+    NoUtilisateur INT NOT NULL FOREIGN KEY REFERENCES Utilisateurs(NoUtilisateur),
+    NoPreference INT NOT NULL FOREIGN KEY REFERENCES Preferences(NoPreference),
+	Valeur NVARCHAR(50)
+);
+INSERT INTO UtilisateursPreferences VALUES
+    (3,1,'Yellow'),
+    (3,2,'Blue'),
+    (4,3,NULL),
+    (5,3,NULL),
+    (5,4,NULL),
+    (6,3,NULL),
+    (6,4,NULL),
+    (6,5,NULL),
+    (7,1,'Blue'),
+    (7,2,'Yellow'),
+    (7,3,NULL),
+    (7,4,NULL),
+    (7,5,NULL),
+    (7,7,'20');
+------------------------------------------------------------------------------
+/*CREATE TABLE ValeursPreferences (
+    NoUtilisateur INT NOT NULL FOREIGN KEY REFERENCES UtilisateursPreferences(NoUtilisateur),
+    NoPreference INT NOT NULL FOREIGN KEY REFERENCES UtilisateursPreferences(NoPreference),
+    Valeur NVARCHAR(50) NOT NULL
+);
+INSERT INTO ValeursPreferences VALUES
+    (3,1,'Yellow'),
+    (3,2,'Blue'),
+    (7,1,'Blue'),
+    (7,2,'Yellow'),
+    (7,7,'20');
+*/
+------------------------------------------------------------------------------
+
+CREATE TABLE EmpruntsFilms (
+    NoExemplaire INT NOT NULL PRIMARY KEY,
+    NoUtilisateur INT NOT NULL FOREIGN KEY REFERENCES Utilisateurs(NoUtilisateur),
+    DateEmprunt DATETIME NOT NULL
 );
 INSERT INTO EmpruntsFilms VALUES
     (18100101,3,'2018-10-01 00:00:00'),
@@ -151,11 +340,11 @@ INSERT INTO EmpruntsFilms VALUES
     (18120201,6,'2018-12-02 00:00:00'),
     (18120301,6,'2018-12-03 00:00:00');
 
+------------------------------------------------------------------------------
 
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS Exemplaires (
-    `NoExemplaire` INT,
-    `NoUtilisateurProprietaire` INT
+CREATE TABLE Exemplaires (
+    NoExemplaire INT NOT NULL PRIMARY KEY,
+    NoUtilisateurProprietaire INT NOT NULL FOREIGN KEY REFERENCES Utilisateurs(NoUtilisateur)
 );
 INSERT INTO Exemplaires VALUES
     (18100101,3),
@@ -194,25 +383,27 @@ INSERT INTO Exemplaires VALUES
     (18120101,2),
     (18120201,6),
     (18120301,6);
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS Films (
-    `NoFilm` INT,
-    `AnneeSortie` INT,
-    `Categorie` INT,
-    `Format` INT,
-    `DateMAJ` DATETIME,
-    `NoUtilisateurMAJ` INT,
-    `Resume` VARCHAR(500) CHARACTER SET utf8,
-    `DureeMinutes` INT,
-    `FilmOriginal` INT,
-    `ImagePochette` VARCHAR(10) CHARACTER SET utf8,
-    `NbDisques` INT,
-    `TitreFrancais` VARCHAR(50) CHARACTER SET utf8,
-    `TitreOriginal` VARCHAR(36) CHARACTER SET utf8,
-    `VersionEtendue` INT,
-    `NoRealisateur` INT,
-    `NoProducteur` INT,
-    `XTra` VARCHAR(96) CHARACTER SET utf8
+
+------------------------------------------------------------------------------
+
+CREATE TABLE Films (
+    NoFilm INT NOT NULL PRIMARY KEY,
+    AnneeSortie INT,
+    Categorie INT FOREIGN KEY REFERENCES Categories(NoCategorie),
+    Format INT FOREIGN KEY REFERENCES Formats(NoFormat),
+    DateMAJ DATETIME NOT NULL,
+    NoUtilisateurMAJ INT NOT NULL FOREIGN KEY REFERENCES Utilisateurs(NoUtilisateur),
+    Resume NVARCHAR(500),
+    DureeMinutes INT,
+    FilmOriginal INT,
+    ImagePochette NVARCHAR(50),
+    NbDisques INT,
+    TitreFrancais NVARCHAR(50) NOT NULL,
+    TitreOriginal NVARCHAR(50),
+    VersionEtendue BIT,
+    NoRealisateur INT FOREIGN KEY REFERENCES Realisateurs(NoRealisateur),
+    NoProducteur INT FOREIGN KEY REFERENCES Producteurs(NoProducteur),
+    XTra NVARCHAR(255) NOT NULL
 );
 INSERT INTO Films VALUES
     (181001,1979,20,3,'2018-10-01 00:00:00',3,'Le capitaine Willard (Martin Sheen) est envoyé au Cambodge avec pour mission d''exécuter le colonel Kurtz (Marlon Brando), un officier américain déserteur qui a perdu la raison et s''est improvisé souverain d''une tribu indigène. En descendant la rivière qui le mènera à son but, Willard rencontre le lieutenant colonel Kilgore (Robert Duvall) dont l''amour de la guerre n''a d''égal que sa passion pour le " surf ".',217,NULL,'171001.jpg',3,'C''est l''apocalypse','Apocalypse now',1,1,1,'http://www.cinemamontreal.com/films/3114/C_est_l_Apocalypse.html'),
@@ -252,10 +443,11 @@ INSERT INTO Films VALUES
     (181202,NULL,NULL,NULL,'2018-12-02 00:00:00',6,NULL,NULL,NULL,NULL,NULL,'Le tambour',NULL,NULL,NULL,NULL,'http://www.cinemamontreal.com/films/3173/Le_Tambour.html'),
     (181203,NULL,NULL,NULL,'2018-12-03 00:00:00',6,NULL,NULL,NULL,NULL,NULL,'V for Vendetta',NULL,NULL,NULL,NULL,'http://www.cinemamontreal.com/films/8531/V_for_Vendetta.html');
 
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS FilmsActeurs (
-    `NoFilm` INT,
-    `NoActeur` INT
+------------------------------------------------------------------------------
+
+CREATE TABLE FilmsActeurs (
+    NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
+    NoActeur INT NOT NULL FOREIGN KEY REFERENCES Acteurs(NoActeur)
 );
 INSERT INTO FilmsActeurs VALUES
     (181001,1),
@@ -302,10 +494,12 @@ INSERT INTO FilmsActeurs VALUES
     (181118,4),
     (181118,5),
     (181118,6);
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS FilmsLangues (
-    `NoFilm` INT,
-    `NoLangue` INT
+
+------------------------------------------------------------------------------
+
+CREATE TABLE FilmsLangues (
+    NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
+    NoLangue INT NOT NULL FOREIGN KEY REFERENCES Langues(NoLangue)
 );
 INSERT INTO FilmsLangues VALUES
     (181001,1),
@@ -365,10 +559,12 @@ INSERT INTO FilmsLangues VALUES
     (181201,3),
     (181202,1),
     (181203,1);
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS FilmsSousTitres (
-    `NoFilm` INT,
-    `NoSousTitre` INT
+
+------------------------------------------------------------------------------
+
+CREATE TABLE FilmsSousTitres (
+    NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
+    NoSousTitre INT NOT NULL FOREIGN KEY REFERENCES SousTitres(NoSousTitre)
 );
 INSERT INTO FilmsSousTitres VALUES
     (181001,1),
@@ -411,10 +607,12 @@ INSERT INTO FilmsSousTitres VALUES
     (181201,1),
     (181201,2),
     (181201,3);
-		------------------------------------------------------------------------------
-		CREATE TABLE IF NOT EXISTS FilmsSupplements (
-    `NoFilm` INT,
-    `NoSupplement` INT
+
+------------------------------------------------------------------------------
+
+CREATE TABLE FilmsSupplements (
+    NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
+    NoSupplement INT NOT NULL FOREIGN KEY REFERENCES Supplements(NoSupplement)
 );
 INSERT INTO FilmsSupplements VALUES
     (181001,4),
@@ -462,168 +660,3 @@ INSERT INTO FilmsSupplements VALUES
     (181201,1),
     (181201,2),
     (181201,8);
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Formats (
-    `NoFormat` INT,
-    `Description` VARCHAR(11) CHARACTER SET utf8
-);
-INSERT INTO Formats VALUES
-    (1,'Blu-Ray'),
-    (2,'Normal'),
-    (3,'Panoramique');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Langues (
-    `NoLangue` INT,
-    `Langue` VARCHAR(8) CHARACTER SET utf8
-);
-INSERT INTO Langues VALUES
-    (1,'Français'),
-    (2,'Anglais'),
-    (3,'Espagnol');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Preferences (
-    `NoPreference` INT,
-    `Description` VARCHAR(31) CHARACTER SET utf8
-);
-INSERT INTO Preferences VALUES
-    (1,'Couleur de fond'),
-    (2,'Couleur du texte'),
-    (3,'Envoi courriel si ajout'),
-    (4,'Envoi courriel si appropriation'),
-    (5,'Envoi courriel si suppression'),
-    (6,'Image de fond'),
-    (7,'Nombre de films par page');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Producteurs (
-    `NoProducteur` INT,
-    `Nom` VARCHAR(20) CHARACTER SET utf8
-);
-INSERT INTO Producteurs VALUES
-    (1,'Francis Ford Coppola'),
-    (2,'Jerry Weintraub'),
-    (3,'Jim Czarnecki'),
-    (4,'Michael Wimer'),
-    (5,'Pierre Even'),
-    (6,'Edward S. Feldman'),
-    (7,'Nicole Robert'),
-    (8,'Pierre Gendron'),
-    (9,'Xavier Dolan'),
-    (10,'Albert S. Ruddy'),
-    (11,'Henry Fonda'),
-    (12,'George Clooney'),
-    (13,'Niki Marvin'),
-    (14,'Peter Jackson'),
-    (15,'Stephen J. Cannell'),
-    (16,'Oren Peli'),
-    (17,'Matthew Gross');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Realisateurs (
-    `NoRealisateur` INT,
-    `Nom` VARCHAR(20) CHARACTER SET utf8
-);
-INSERT INTO Realisateurs VALUES
-    (1,'Francis Ford Coppola'),
-    (2,'Claude Desrosiers'),
-    (3,'Steven Soderbergh'),
-    (4,'Michael Moore'),
-    (5,'Roland Emmerich'),
-    (6,'Jean-Marc Vallée'),
-    (7,'Kevin Lima'),
-    (8,'Yves Pelletier'),
-    (9,'Éric Canuel'),
-    (10,'Xavier Dolan'),
-    (11,'Sidney Lumet'),
-    (12,'John Maybury'),
-    (13,'Frank Darabont'),
-    (14,'Andy Tennant'),
-    (15,'Joe Carnahan'),
-    (16,'Oren Peli'),
-    (17,'Philippe Gagnon'),
-    (18,'Julie Taymor');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS SousTitres (
-    `NoSousTitre` INT,
-    `LangueSousTitre` VARCHAR(8) CHARACTER SET utf8
-);
-INSERT INTO SousTitres VALUES
-    (1,'Français'),
-    (2,'Anglais'),
-    (3,'Espagnol');
-------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Supplements (
-    `NoSupplement` INT,
-    `Description` VARCHAR(36) CHARACTER SET utf8
-);
-INSERT INTO Supplements VALUES
-    (1,'Bande-annonce (Trailer)'),
-    (2,'Bande sonore'),
-    (3,'Commentaires audio'),
-    (4,'Documentaire sur la création du film'),
-    (5,'Fin alternative'),
-    (6,'Gaffes (Bloopers)'),
-    (7,'Galerie d''images'),
-    (8,'Interprètes et artisans'),
-    (9,'Montages de prises ratées'),
-    (10,'Notes de production'),
-    (11,'Sauvegarde d''écran'),
-    (12,'Scènes inédites'),
-    (13,'Scènes supprimées'),
-    (14,'Sélection des scènes'),
-    (15,'Visionneur de scénario-maquette');
-	------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS TypesUtilisateur (
-    `TypeUtilisateur` VARCHAR(1) CHARACTER SET utf8,
-    `Description` VARCHAR(17) CHARACTER SET utf8
-);
-INSERT INTO TypesUtilisateur VALUES
-    ('A','Administrateur'),
-    ('S','Super utilisateur'),
-    ('U','Utilisateur');
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS Utilisateurs (
-    `NoUtilisateur` INT,
-    `NomUtilisateur` VARCHAR(16) CHARACTER SET utf8,
-    `Courriel` VARCHAR(23) CHARACTER SET utf8,
-    `MotPasse` INT,
-    `TypeUtilisateur` VARCHAR(1) CHARACTER SET utf8
-);
-INSERT INTO Utilisateurs VALUES
-    (1,'admin     ','m.airouche@cgodin.qc.ca',99999,'A'),
-    (2,'helene    ','helene@gmail.com',11111,'S'),
-    (3,'lucille   ','lucille@gmail.com',22222,'U'),
-    (4,'louis.marie     ','louis@gmail.com',33333,'U'),
-    (5,'rejean    ','rejean@gmail.com',44444,'U'),
-    (6,'christian ','christian@gmail.com',55555,'U'),
-    (7,'jose      ','jose@gmail.com',66666,'U');
-		------------------------------------------------------------------------------
-		CREATE TABLE IF NOT EXISTS UtilisateursPreferences (
-    `NoUtilisateur` INT,
-    `NoPreference` INT
-);
-INSERT INTO UtilisateursPreferences VALUES
-    (3,1),
-    (3,2),
-    (4,3),
-    (5,3),
-    (5,4),
-    (6,3),
-    (6,4),
-    (6,5),
-    (7,1),
-    (7,2),
-    (7,3),
-    (7,4),
-    (7,5),
-    (7,7);
-	------------------------------------------------------------------------------
-	CREATE TABLE IF NOT EXISTS ValeursPreferences (
-    `NoUtilisateur` INT,
-    `NoPreference` INT,
-    `Valeur` VARCHAR(6) CHARACTER SET utf8
-);
-INSERT INTO ValeursPreferences VALUES
-    (3,1,'Yellow'),
-    (3,2,'Blue'),
-    (7,1,'Blue'),
-    (7,2,'Yellow'),
-    (7,7,'20');
