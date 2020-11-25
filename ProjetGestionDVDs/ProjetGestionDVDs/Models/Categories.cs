@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetGestionDVDs.Models
 {
@@ -9,8 +10,8 @@ namespace ProjetGestionDVDs.Models
         {
             Films = new HashSet<Films>();
         }
-
-        public int NoCategorie { get; set; }
+        [Key]
+        public int CategorieId { get; set; }
         public string Description { get; set; }
 
         public ICollection<Films> Films { get; set; }

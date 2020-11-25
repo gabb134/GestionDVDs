@@ -61,7 +61,7 @@ namespace ProjetGestionDVDs.Models
 
             modelBuilder.Entity<Categories>(entity =>
             {
-                entity.HasKey(e => e.NoCategorie);
+                entity.HasKey(e => e.CategorieId);
 
                 entity.Property(e => e.Description)
                     .IsRequired()
@@ -108,7 +108,7 @@ namespace ProjetGestionDVDs.Models
 
                 entity.Property(e => e.ImagePochette).HasMaxLength(50);
 
-                entity.Property(e => e.NoUtilisateurMaj).HasColumnName("NoUtilisateurMAJ");
+                entity.Property(e => e.UtilisateurMajId).HasColumnName("NoUtilisateurMAJ");
 
                 entity.Property(e => e.Resume).HasMaxLength(500);
 
@@ -145,7 +145,7 @@ namespace ProjetGestionDVDs.Models
 
                 entity.HasOne(d => d.UtilisateurMajNavigationId)
                     .WithMany(p => p.Films)
-                    .HasForeignKey(d => d.NoUtilisateurMaj)
+                    .HasForeignKey(d => d.UtilisateurMajId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Films__NoUtilisa__16644E42");
             });
@@ -154,13 +154,13 @@ namespace ProjetGestionDVDs.Models
             {
                 entity.HasKey(e => new { e.FilmId, e.ActeurId });
 
-                entity.HasOne(d => d.NoActeurNavigation)
+                entity.HasOne(d => d.ActeurNavigationId)
                     .WithMany(p => p.FilmsActeurs)
                     .HasForeignKey(d => d.ActeurId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__FilmsActe__NoAct__1C1D2798");
 
-                entity.HasOne(d => d.NoFilmNavigation)
+                entity.HasOne(d => d.FilmNavigationId)
                     .WithMany(p => p.FilmsActeurs)
                     .HasForeignKey(d => d.FilmId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -323,13 +323,13 @@ namespace ProjetGestionDVDs.Models
 
                 entity.Property(e => e.Valeur).HasMaxLength(50);
 
-                entity.HasOne(d => d.NoPreferenceNavigation)
+                entity.HasOne(d => d.PreferenceNavigationId)
                     .WithMany(p => p.UtilisateursPreferences)
                     .HasForeignKey(d => d.PreferenceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Utilisate__NoPre__0BE6BFCF");
 
-                entity.HasOne(d => d.NoUtilisateurNavigation)
+                entity.HasOne(d => d.UtilisateurNavigationId)
                     .WithMany(p => p.UtilisateursPreferences)
                     .HasForeignKey(d => d.UtilisateurId)
                     .OnDelete(DeleteBehavior.ClientSetNull)

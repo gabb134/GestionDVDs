@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetGestionDVDs.Models
 {
@@ -12,13 +13,13 @@ namespace ProjetGestionDVDs.Models
             FilmsSousTitres = new HashSet<FilmsSousTitres>();
             FilmsSupplements = new HashSet<FilmsSupplements>();
         }
-
+        [Key]
         public int FilmId { get; set; }
         public int? AnneeSortie { get; set; }
         public int? Categorie { get; set; }
         public int? Format { get; set; }
         public DateTime DateMaj { get; set; }
-        public int NoUtilisateurMaj { get; set; }
+        public int UtilisateurMajId { get; set; }
         public string Resume { get; set; }
         public int? DureeMinutes { get; set; }
         public int? FilmOriginal { get; set; }

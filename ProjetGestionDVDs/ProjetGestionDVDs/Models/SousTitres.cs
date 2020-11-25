@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetGestionDVDs.Models
 {
@@ -9,7 +10,7 @@ namespace ProjetGestionDVDs.Models
         {
             FilmsSousTitres = new HashSet<FilmsSousTitres>();
         }
-
+        [Key]
         public int SousTitreId { get; set; }
         public string LangueSousTitre { get; set; }
 
