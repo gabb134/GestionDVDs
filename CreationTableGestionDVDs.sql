@@ -22,11 +22,14 @@ DROP TABLE Acteurs
 
 
 CREATE TABLE Acteurs (
-    NoActeur INT NOT NULL PRIMARY KEY,
+    NoActeur INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Nom NVARCHAR(50) NOT NULL,
     Sexe NCHAR(1) NOT NULL
 )
-INSERT INTO Acteurs VALUES
+
+SET IDENTITY_INSERT Acteurs ON
+
+INSERT INTO Acteurs (NoActeur, Nom, Sexe) VALUES
     (1,'Marlon Brando','H'),
     (2,'Robert Duvall','H'),
     (3,'Martin Sheen','H'),
@@ -68,13 +71,19 @@ INSERT INTO Acteurs VALUES
     (39,'Liam Neeson','H'),
     (40,'Bradley Cooper','H');
 
+SET IDENTITY_INSERT Acteurs OFF
+
+
 ------------------------------------------------------------------------------
 
 CREATE TABLE Categories (
-    NoCategorie INT NOT NULL PRIMARY KEY,
+    NoCategorie INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Description NVARCHAR(50) NOT NULL
 )
-INSERT INTO Categories VALUES
+
+SET IDENTITY_INSERT Categories ON
+
+INSERT INTO Categories (NoCategorie, Description) VALUES
     (1,'Action'),
     (2,'Adolescent'),
     (3,'Biographie'),
@@ -127,30 +136,47 @@ INSERT INTO Categories VALUES
     (50,'Suspense'),
     (51,'Western');
 
+SET IDENTITY_INSERT Categories OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Formats (
-    NoFormat INT NOT NULL PRIMARY KEY,
+    NoFormat INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Description NVARCHAR(50) NOT NULL
 );
-INSERT INTO Formats VALUES
+
+SET IDENTITY_INSERT Formats ON
+
+INSERT INTO Formats (NoFormat, Description) VALUES
     (1,'Blu-Ray'),
     (2,'Normal'),
     (3,'Panoramique');
+
+SET IDENTITY_INSERT Formats OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Langues (
-    NoLangue INT NOT NULL PRIMARY KEY,
+    NoLangue INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Langue NVARCHAR(10) NOT NULL
 );
-INSERT INTO Langues VALUES
+
+SET IDENTITY_INSERT Langues ON
+
+INSERT INTO Langues (NoLangue, Langue) VALUES
     (1,'Français'),
     (2,'Anglais'),
     (3,'Espagnol');
+
+SET IDENTITY_INSERT Langues OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Preferences (
-    NoPreference INT NOT NULL PRIMARY KEY,
+    NoPreference INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Description NVARCHAR(50) NOT NULL
 );
-INSERT INTO Preferences VALUES
+
+SET IDENTITY_INSERT Preferences ON
+
+INSERT INTO Preferences (NoPreference, Description) VALUES
     (1,'Couleur de fond'),
     (2,'Couleur du texte'),
     (3,'Envoi courriel si ajout'),
@@ -158,12 +184,19 @@ INSERT INTO Preferences VALUES
     (5,'Envoi courriel si suppression'),
     (6,'Image de fond'),
     (7,'Nombre de films par page');
+
+
+SET IDENTITY_INSERT Preferences OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Producteurs (
-    NoProducteur INT NOT NULL PRIMARY KEY,
+    NoProducteur INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Nom NVARCHAR(50) NOT NULL
 );
-INSERT INTO Producteurs VALUES
+
+SET IDENTITY_INSERT Producteurs ON
+
+INSERT INTO Producteurs (NoProducteur, Nom) VALUES
     (1,'Francis Ford Coppola'),
     (2,'Jerry Weintraub'),
     (3,'Jim Czarnecki'),
@@ -181,12 +214,18 @@ INSERT INTO Producteurs VALUES
     (15,'Stephen J. Cannell'),
     (16,'Oren Peli'),
     (17,'Matthew Gross');
+
+SET IDENTITY_INSERT Producteurs OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Realisateurs (
-    NoRealisateur INT NOT NULL PRIMARY KEY,
+    NoRealisateur INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Nom NVARCHAR(50) NOT NULL
 );
-INSERT INTO Realisateurs VALUES
+
+SET IDENTITY_INSERT Realisateurs ON
+
+INSERT INTO Realisateurs (NoRealisateur, Nom) VALUES
     (1,'Francis Ford Coppola'),
     (2,'Claude Desrosiers'),
     (3,'Steven Soderbergh'),
@@ -205,21 +244,33 @@ INSERT INTO Realisateurs VALUES
     (16,'Oren Peli'),
     (17,'Philippe Gagnon'),
     (18,'Julie Taymor');
+
+SET IDENTITY_INSERT Realisateurs OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE SousTitres (
-    NoSousTitre INT NOT NULL PRIMARY KEY,
+    NoSousTitre INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     LangueSousTitre NVARCHAR(10) NOT NULL
 );
-INSERT INTO SousTitres VALUES
+
+SET IDENTITY_INSERT SousTitres ON
+
+INSERT INTO SousTitres (NoSousTitre, LangueSousTitre) VALUES
     (1,'Français'),
     (2,'Anglais'),
     (3,'Espagnol');
+
+SET IDENTITY_INSERT SousTitres OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE Supplements (
-    NoSupplement INT NOT NULL PRIMARY KEY,
+    NoSupplement INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Description NVARCHAR(50) NOT NULL
 );
-INSERT INTO Supplements VALUES
+
+SET IDENTITY_INSERT Supplements ON
+
+INSERT INTO Supplements (NoSupplement, Description) VALUES
     (1,'Bande-annonce (Trailer)'),
     (2,'Bande sonore'),
     (3,'Commentaires audio'),
@@ -235,6 +286,9 @@ INSERT INTO Supplements VALUES
     (13,'Scènes supprimées'),
     (14,'Sélection des scènes'),
     (15,'Visionneur de scénario-maquette');
+
+SET IDENTITY_INSERT Supplements OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE TypesUtilisateur (
     TypeUtilisateur NCHAR(1) NOT NULL PRIMARY KEY,
@@ -246,13 +300,16 @@ INSERT INTO TypesUtilisateur VALUES
     ('U','Utilisateur');
 ------------------------------------------------------------------------------
 CREATE TABLE Utilisateurs (
-    NoUtilisateur INT NOT NULL PRIMARY KEY,
+    NoUtilisateur INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     NomUtilisateur NVARCHAR(15) NOT NULL, -- initialement NVARCHAR(10)
     Courriel NVARCHAR(50) NOT NULL,
     MotPasse INT NOT NULL,
     TypeUtilisateur NCHAR(1) NOT NULL FOREIGN KEY REFERENCES TypesUtilisateur(TypeUtilisateur)
 );
-INSERT INTO Utilisateurs VALUES
+
+SET IDENTITY_INSERT Utilisateurs ON
+
+INSERT INTO Utilisateurs (NoUtilisateur, NomUtilisateur, Courriel, MotPasse, TypeUtilisateur) VALUES
     (1,'admin','m.airouche@cgodin.qc.ca',99999,'A'),
     (2,'helene','helene@gmail.com',11111,'S'),
     (3,'lucille','lucille@gmail.com',22222,'U'),
@@ -261,11 +318,14 @@ INSERT INTO Utilisateurs VALUES
     (6,'christian','christian@gmail.com',55555,'U'),
     (7,'jose','jose@gmail.com',66666,'U');
 
+SET IDENTITY_INSERT Utilisateurs OFF
+
 ------------------------------------------------------------------------------
 CREATE TABLE UtilisateursPreferences (
     NoUtilisateur INT NOT NULL FOREIGN KEY REFERENCES Utilisateurs(NoUtilisateur),
     NoPreference INT NOT NULL FOREIGN KEY REFERENCES Preferences(NoPreference),
-	Valeur NVARCHAR(50)
+	Valeur NVARCHAR(50),
+	PRIMARY KEY(NoUtilisateur, NoPreference)
 );
 INSERT INTO UtilisateursPreferences VALUES
     (3,1,'Yellow'),
@@ -447,7 +507,8 @@ INSERT INTO Films VALUES
 
 CREATE TABLE FilmsActeurs (
     NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
-    NoActeur INT NOT NULL FOREIGN KEY REFERENCES Acteurs(NoActeur)
+    NoActeur INT NOT NULL FOREIGN KEY REFERENCES Acteurs(NoActeur),
+	PRIMARY KEY(NoFilm, NoActeur)
 );
 INSERT INTO FilmsActeurs VALUES
     (181001,1),
@@ -499,7 +560,8 @@ INSERT INTO FilmsActeurs VALUES
 
 CREATE TABLE FilmsLangues (
     NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
-    NoLangue INT NOT NULL FOREIGN KEY REFERENCES Langues(NoLangue)
+    NoLangue INT NOT NULL FOREIGN KEY REFERENCES Langues(NoLangue),
+	PRIMARY KEY(NoFilm, NoLangue)
 );
 INSERT INTO FilmsLangues VALUES
     (181001,1),
@@ -564,7 +626,8 @@ INSERT INTO FilmsLangues VALUES
 
 CREATE TABLE FilmsSousTitres (
     NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
-    NoSousTitre INT NOT NULL FOREIGN KEY REFERENCES SousTitres(NoSousTitre)
+    NoSousTitre INT NOT NULL FOREIGN KEY REFERENCES SousTitres(NoSousTitre),
+	PRIMARY KEY(NoFilm, NoSousTitre)
 );
 INSERT INTO FilmsSousTitres VALUES
     (181001,1),
@@ -612,7 +675,8 @@ INSERT INTO FilmsSousTitres VALUES
 
 CREATE TABLE FilmsSupplements (
     NoFilm INT NOT NULL FOREIGN KEY REFERENCES Films(NoFilm),
-    NoSupplement INT NOT NULL FOREIGN KEY REFERENCES Supplements(NoSupplement)
+    NoSupplement INT NOT NULL FOREIGN KEY REFERENCES Supplements(NoSupplement),
+	PRIMARY KEY(NoFilm, NoSupplement)
 );
 INSERT INTO FilmsSupplements VALUES
     (181001,4),
