@@ -5,6 +5,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Images\181001.jpg" />
+    <Content Remove="wwwroot\Images\181002.jpg" />
+    <Content Remove="wwwroot\Images\181003.jpg" />
+    <Content Remove="wwwroot\Images\181004.jpg" />
+    <Content Remove="wwwroot\Images\181006.jpg" />
+    <Content Remove="wwwroot\Images\181008.jpg" />
+    <Content Remove="wwwroot\Images\181012.jpg" />
+    <Content Remove="wwwroot\Images\181013.jpg" />
+    <Content Remove="wwwroot\Images\181104.jpg" />
+    <Content Remove="wwwroot\Images\181105.jpg" />
+    <Content Remove="wwwroot\Images\181107.jpg" />
+    <Content Remove="wwwroot\Images\181112.jpg" />
+    <Content Remove="wwwroot\Images\181114.jpg" />
+    <Content Remove="wwwroot\Images\181117.jpg" />
+    <Content Remove="wwwroot\Images\181118.jpg" />
+    <Content Remove="wwwroot\Images\181201.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\181001.jpg" />
+    <None Include="wwwroot\Images\181002.jpg" />
+    <None Include="wwwroot\Images\181003.jpg" />
+    <None Include="wwwroot\Images\181004.jpg" />
+    <None Include="wwwroot\Images\181006.jpg" />
+    <None Include="wwwroot\Images\181008.jpg" />
+    <None Include="wwwroot\Images\181012.jpg" />
+    <None Include="wwwroot\Images\181013.jpg" />
+    <None Include="wwwroot\Images\181104.jpg" />
+    <None Include="wwwroot\Images\181105.jpg" />
+    <None Include="wwwroot\Images\181107.jpg" />
+    <None Include="wwwroot\Images\181112.jpg" />
+    <None Include="wwwroot\Images\181114.jpg" />
+    <None Include="wwwroot\Images\181117.jpg" />
+    <None Include="wwwroot\Images\181118.jpg" />
+    <None Include="wwwroot\Images\181201.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
