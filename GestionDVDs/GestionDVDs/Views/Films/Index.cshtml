@@ -1,0 +1,125 @@
+﻿@model IEnumerable<GestionDVDs.Models.Films>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AnneeSortie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateMaj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DureeMinutes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmOriginal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePochette)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbDisques)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitreFrancais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitreOriginal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VersionEtendue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Xtra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategorieNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormatNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producteur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Realisateur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UtilisateurMaj)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnneeSortie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateMaj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DureeMinutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmOriginal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePochette)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbDisques)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitreFrancais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitreOriginal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VersionEtendue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Xtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategorieNavigation.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormatNavigation.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producteur.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Realisateur.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UtilisateurMaj.Courriel)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FilmId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FilmId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FilmId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
