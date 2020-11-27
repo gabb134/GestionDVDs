@@ -11,7 +11,7 @@ namespace GestionDVDs.Models
             Utilisateurs = new HashSet<Utilisateurs>();
         }
         [Key]
-        public string TypeUtilisateur { get; set; }
+        public char TypeUtilisateur { get; set; }
         public string Description { get; set; }
 
         public ICollection<Utilisateurs> Utilisateurs { get; set; }
