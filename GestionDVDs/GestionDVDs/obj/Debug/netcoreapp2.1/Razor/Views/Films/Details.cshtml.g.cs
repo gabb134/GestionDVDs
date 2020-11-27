@@ -384,7 +384,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(3106, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bfabcf9f0e3544b48a6c6127ee183483", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0be48d08fe8149349e45c3d513d1000f", async() => {
                 BeginContext(3156, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -419,7 +419,7 @@ using GestionDVDs.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(3172, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "977b0a467bcf40fbaf25f288cce950ba", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d07b3ab2bfda4fa9b6559956c399058d", async() => {
                 BeginContext(3194, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
