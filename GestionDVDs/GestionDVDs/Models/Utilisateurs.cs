@@ -17,8 +17,8 @@ namespace GestionDVDs.Models
         public int UtilisateurId { get; set; }
         public string NomUtilisateur { get; set; }
         public string Courriel { get; set; }
-        public int MotPasse { get; set; }
-        public string TypeUtilisateur { get; set; }
+        public string MotPasse { get; set; }
+        public char TypeUtilisateur { get; set; }
 
         public TypesUtilisateur TypeUtilisateurNavigation { get; set; }
         public ICollection<EmpruntsFilms> EmpruntsFilms { get; set; }
