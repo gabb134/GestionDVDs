@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GestionDVDs.Models
 {
-    public partial class Utilisateurs
+    public partial class Utilisateurs :IdentityUser
     {
+
         public Utilisateurs()
         {
             EmpruntsFilms = new HashSet<EmpruntsFilms>();
@@ -17,8 +19,8 @@ namespace GestionDVDs.Models
         public int UtilisateurId { get; set; }
         public string NomUtilisateur { get; set; }
         public string Courriel { get; set; }
-        public int MotPasse { get; set; }
-        public string TypeUtilisateur { get; set; }
+        public string MotPasse { get; set; }
+        public char TypeUtilisateur { get; set; }
 
         public TypesUtilisateur TypeUtilisateurNavigation { get; set; }
         public ICollection<EmpruntsFilms> EmpruntsFilms { get; set; }

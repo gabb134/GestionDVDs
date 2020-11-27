@@ -303,20 +303,20 @@ CREATE TABLE Utilisateurs (
     UtilisateurId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     NomUtilisateur NVARCHAR(15) NOT NULL, -- initialement NVARCHAR(10)
     Courriel NVARCHAR(50) NOT NULL,
-    MotPasse INT NOT NULL,
+    MotPasse NVARCHAR(50) NOT NULL,
     TypeUtilisateur NCHAR(1) NOT NULL FOREIGN KEY REFERENCES TypesUtilisateur(TypeUtilisateur)
 );
 
 SET IDENTITY_INSERT Utilisateurs ON
 
 INSERT INTO Utilisateurs (UtilisateurId, NomUtilisateur, Courriel, MotPasse, TypeUtilisateur) VALUES
-    (1,'admin','m.airouche@cgodin.qc.ca',99999,'A'),
-    (2,'helene','helene@gmail.com',11111,'S'),
-    (3,'lucille','lucille@gmail.com',22222,'U'),
-    (4,'louis.marie','louis@gmail.com',33333,'U'),
-    (5,'rejean','rejean@gmail.com',44444,'U'),
-    (6,'christian','christian@gmail.com',55555,'U'),
-    (7,'jose','jose@gmail.com',66666,'U');
+    (1,'admin','m.airouche@cgodin.qc.ca','99999','A'),
+    (2,'helene','helene@gmail.com','11111','S'),
+    (3,'lucille','lucille@gmail.com','22222','U'),
+    (4,'louis.marie','louis@gmail.com','33333','U'),
+    (5,'rejean','rejean@gmail.com','44444','U'),
+    (6,'christian','christian@gmail.com','55555','U'),
+    (7,'jose','jose@gmail.com','66666','U');
 
 SET IDENTITY_INSERT Utilisateurs OFF
 

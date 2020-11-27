@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GestionDVDs.Models
 {
-    public partial class BDW56_424rContext : DbContext
+    public partial class BDW56_424rContext : IdentityDbContext 
     {
         public BDW56_424rContext()
         {
@@ -37,6 +38,7 @@ namespace GestionDVDs.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            base.OnConfiguring(optionsBuilder);
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
@@ -46,6 +48,7 @@ namespace GestionDVDs.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Acteurs>(entity =>
             {
                 entity.HasKey(e => e.ActeurId);
@@ -335,6 +338,7 @@ namespace GestionDVDs.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Utilisate__Utili__46136164");
             });
+            
         }
     }
 }
