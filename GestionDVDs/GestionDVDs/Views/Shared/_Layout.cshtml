@@ -6,10 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GestionDVDs</title>
-
+   
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -19,19 +21,55 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
         <div class="container">
+            <a class="navbar-brand " asp-area="" asp-controller="Films" asp-action="Index" style="margin-top:-5px;">
+                <img src="~/images/video-player-sign.png" height="30" width="30" />
+            </a>
             <div class="navbar-header">
+
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GestionDVDs</a>
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
+                    <li><a asp-area="" asp-controller="Films" asp-action="Index">DVDs</a></li>
+                    <li><a asp-area="" asp-controller="" asp-action="">Mes DVDs</a></li>
+                    <li><a asp-area="" asp-controller="Films" asp-action="Create">Ajouter un DVD</a></li>
+                    <li><a asp-area="" asp-controller="" asp-action="">Messagerie</a></li>
+                    <!-- Dropdown -->
+                    <!--   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            DVDs
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="" asp-controller="Films" asp-action="Index"> DVDs de tous les utilisateurs</a><br />
+            <a class="dropdown-item" href="#">DVDs en main</a><br />
+            <a class="dropdown-item" href="#">DVDs d’un autre utilisateur</a><br />
+        </div>
+    </li>-->
+                    <li>
+                        <div class="navbar-left" style="margin-top:11px;">
+                            <form  class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
+                                <div class="custom-navbar-buttons col-8">
+                                    <p>
+                                        <input name="type" style="display:none" value="" />
+                                        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Recherche" value=''>
+                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                                    </p>
+
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+
+
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <form method="post" asp-controller="account" asp-action="logout" class="navbar-right">
@@ -58,10 +96,14 @@
                     <li><a asp-area="" asp-controller="Films" asp-action="Index">Gestion des DVDs</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+
                 </ul>
             </div>
         </div>
     </nav>
+
+
+   
 
     <partial name="_CookieConsentPartial" />
 
