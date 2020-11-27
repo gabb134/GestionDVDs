@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GestionDVDs.Models
 {
-    public partial class Utilisateurs
+    public partial class Utilisateurs 
     {
 
         public Utilisateurs()

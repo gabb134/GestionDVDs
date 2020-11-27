@@ -26,7 +26,6 @@
             <a class="navbar-brand " asp-area="" asp-controller="Films" asp-action="Index" style="margin-top:-5px;">
                 <img src="~/images/video-player-sign.png" height="30" width="30" />
             </a>
-
             <div class="navbar-header">
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,18 +45,18 @@
                     <li><a asp-area="" asp-controller="" asp-action="">Messagerie</a></li>
                     <!-- Dropdown -->
                     <!--   <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    DVDs
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" asp-area="" asp-controller="Films" asp-action="Index"> DVDs de tous les utilisateurs</a><br />
-                    <a class="dropdown-item" href="#">DVDs en main</a><br />
-                    <a class="dropdown-item" href="#">DVDs d’un autre utilisateur</a><br />
-                </div>
-            </li>-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            DVDs
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="" asp-controller="Films" asp-action="Index"> DVDs de tous les utilisateurs</a><br />
+            <a class="dropdown-item" href="#">DVDs en main</a><br />
+            <a class="dropdown-item" href="#">DVDs d’un autre utilisateur</a><br />
+        </div>
+    </li>-->
                     <li>
                         <div class="navbar-left" style="margin-top:11px;">
-                            <form class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
+                            <form  class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
                                 <div class="custom-navbar-buttons col-8">
                                     <p>
                                         <input name="type" style="display:none" value="" />
@@ -94,6 +93,7 @@
                         </li>
 
                     }
+              
 
                 </ul>
             </div>
