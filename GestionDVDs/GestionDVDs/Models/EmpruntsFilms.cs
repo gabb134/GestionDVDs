@@ -17,6 +17,6 @@ namespace GestionDVDs.Models
         public int UtilisateurId { get; set; }
         public DateTime DateEmprunt { get; set; }
 
-        public Utilisateurs Utilisateur { get; set; }
+        public ApplicationUser Utilisateur { get; set; }
     }
 }

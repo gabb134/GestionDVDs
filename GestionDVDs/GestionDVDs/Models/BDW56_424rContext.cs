@@ -1,11 +1,12 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GestionDVDs.Models
 {
-    public partial class BDW56_424rContext : IdentityDbContext 
+    public partial class BDW56_424rContext : IdentityDbContext<ApplicationUser> 
     {
         public BDW56_424rContext()
         {
