@@ -32,7 +32,7 @@ namespace GestionDVDs.Controllers
                 // Copy data from RegisterViewModel to IdentityUser
                 var user = new ApplicationUser
                 { 
-                    Id="1",
+                    
                     UserName= model.UserName,
                     Email = model.Email,
                     
