@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201129054228_login2.cs" />
+    <Compile Remove="Migrations\20201129054228_login2.Designer.cs" />
+    <Compile Remove="Migrations\20201129060048_login3.cs" />
+    <Compile Remove="Migrations\20201129060048_login3.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Images\181001.jpg" />
     <Content Remove="wwwroot\Images\181002.jpg" />
     <Content Remove="wwwroot\Images\181003.jpg" />
