@@ -1,19 +1,17 @@
 ﻿@model GestionDVDs.Models.Films
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Ajouter";
 }
 
-<h2>Create</h2>
-
-<h4>Films</h4>
+<h3>Ajouter un film</h3>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FilmId" class="control-label"></label>
+                <label class="control-label">Id du film</label>
                 <input asp-for="FilmId" class="form-control" />
                 <span asp-validation-for="FilmId" class="text-danger"></span>
             </div> 
@@ -51,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="FilmOriginal" class="control-label"></label>
-                <input asp-for="FilmOriginal" class="form-control" />
+                <input asp-for="FilmOriginal" class="form-control"/>
                 <span asp-validation-for="FilmOriginal" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -76,7 +74,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="VersionEtendue" class="control-label"></label>
-                <input asp-for="VersionEtendue" class="form-control" />
+                <input asp-for="VersionEtendue" class="form-control"/>
                 <span asp-validation-for="VersionEtendue" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -100,7 +98,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retourner vers le catalogue</a>
 </div>
 
 @section Scripts {

@@ -20,7 +20,7 @@ namespace GestionDVDs.Models
         public int? Categorie { get; set; }
         public int? Format { get; set; }
         public DateTime DateMaj { get; set; }
-        public int UtilisateurMajid { get; set; }
+        public string UtilisateurMajId { get; set; }
         public string Resume { get; set; }
         public int? DureeMinutes { get; set; }
         public int? FilmOriginal { get; set; }
@@ -37,7 +37,7 @@ namespace GestionDVDs.Models
         public Formats FormatNavigation { get; set; }
         public Producteurs Producteur { get; set; }
         public Realisateurs Realisateur { get; set; }
-        public Utilisateurs UtilisateurMaj { get; set; }
+        public ApplicationUser UtilisateurMaj { get; set; }
         public ICollection<FilmsActeurs> FilmsActeurs { get; set; }
         public ICollection<FilmsLangues> FilmsLangues { get; set; }
         public ICollection<FilmsSousTitres> FilmsSousTitres { get; set; }

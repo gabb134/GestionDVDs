@@ -4,14 +4,16 @@ using GestionDVDs.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GestionDVDs.Migrations
 {
     [DbContext(typeof(BDW56_424rContext))]
-    partial class BDW56_424rContextModelSnapshot : ModelSnapshot
+    [Migration("20201129054842_login2")]
+    partial class login2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +42,8 @@ namespace GestionDVDs.Migrations
 
             modelBuilder.Entity("GestionDVDs.Models.ApplicationUser", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("UtilisateurId");
+                    b.Property<string>("UtilisateurId")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("AccessFailedCount");
 
@@ -77,7 +78,7 @@ namespace GestionDVDs.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
-                    b.HasKey("Id");
+                    b.HasKey("UtilisateurId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -128,8 +129,7 @@ namespace GestionDVDs.Migrations
                 {
                     b.Property<int>("ExemplaireId");
 
-                    b.Property<string>("UtilisateurProprietaireId")
-                        .IsRequired();
+                    b.Property<string>("UtilisateurProprietaireId");
 
                     b.HasKey("ExemplaireId");
 
@@ -176,7 +176,6 @@ namespace GestionDVDs.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("UtilisateurMajid")
-                        .IsRequired()
                         .HasColumnName("UtilisateurMAJId");
 
                     b.Property<bool?>("VersionEtendue");

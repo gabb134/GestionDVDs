@@ -7,6 +7,8 @@ namespace GestionDVDs.Models
 {
     public class RegisterViewModel
     {
+        [Required(ErrorMessage="Veuillez ajouter un nom d'utilisteur")]
+        public string UserName { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }

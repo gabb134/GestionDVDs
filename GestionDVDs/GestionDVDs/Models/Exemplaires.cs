@@ -8,8 +8,8 @@ namespace GestionDVDs.Models
     {
         [Key]
         public int ExemplaireId { get; set; }
-        public int UtilisateurProprietaireId { get; set; }
+        public string UtilisateurProprietaireId { get; set; }
 
-        public Utilisateurs UtilisateurProprietaire { get; set; }
+        public ApplicationUser UtilisateurProprietaire { get; set; }
     }
 }

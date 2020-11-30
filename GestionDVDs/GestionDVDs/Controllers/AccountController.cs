@@ -10,9 +10,9 @@ namespace GestionDVDs.Controllers
 {
     public class AccountController : Microsoft.AspNetCore.Mvc.Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -30,10 +30,10 @@ namespace GestionDVDs.Controllers
             if (ModelState.IsValid)
             {
                 // Copy data from RegisterViewModel to IdentityUser
-                var user = new IdentityUser
+                var user = new ApplicationUser
                 { 
                     
-                    UserName= model.Email,
+                    UserName= model.UserName,
                     Email = model.Email,
                     
                 };
@@ -64,7 +64,7 @@ namespace GestionDVDs.Controllers
             if (ModelState.IsValid)
             {
                 var result = await signInManager.PasswordSignInAsync(
-                model.Email, model.Password, false,false);
+                model.UserName, model.Password, false,false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("index", "Films");

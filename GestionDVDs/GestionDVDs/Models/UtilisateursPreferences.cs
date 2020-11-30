@@ -10,7 +10,7 @@ namespace GestionDVDs.Models
         [Key]
         [Column(Order = 1)]
         [Required]
-        public int UtilisateurId { get; set; }
+        public string UtilisateurId { get; set; }
         [Key]
         [Column(Order = 2)]
         [Required]
@@ -18,6 +18,6 @@ namespace GestionDVDs.Models
         public string Valeur { get; set; }
 
         public Preferences Preference { get; set; }
-        public Utilisateurs Utilisateur { get; set; }
+        public ApplicationUser Utilisateur { get; set; }
     }
 }

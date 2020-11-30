@@ -14,9 +14,9 @@ namespace GestionDVDs.Models
         [Key]
         [Column(Order = 2)]
         [Required]
-        public int UtilisateurId { get; set; }
+        public string UtilisateurId { get; set; }
         public DateTime DateEmprunt { get; set; }
 
-        public Utilisateurs Utilisateur { get; set; }
+        public ApplicationUser Utilisateur { get; set; }
     }
 }

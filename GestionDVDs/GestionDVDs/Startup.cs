@@ -28,12 +28,12 @@ namespace GestionDVDs
         {
             services.AddDbContext<BDW56_424rContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DVDsConnection")));
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<BDW56_424rContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<BDW56_424rContext>();
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings
                 options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 6;
+                options.Password.RequiredLength = 5;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;

@@ -4,10 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h3>Détails</h3>
 
 <div>
-    <h4>Films</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -104,11 +103,11 @@
             @Html.DisplayNameFor(model => model.UtilisateurMaj)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.UtilisateurMaj.Courriel)
+            @Html.DisplayFor(model => model.UtilisateurMaj.Email)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.FilmId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.FilmId">Modifier</a> |
+    <a asp-action="Index">Retourner vers le catalogue</a>
 </div>

@@ -21,8 +21,9 @@ namespace GestionDVDs.Controllers
         // GET: Films
         public async Task<IActionResult> Index()
         {
-            var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj);
-            return View(await bDW56_424rContext.ToListAsync());
+             var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj);
+             return View(await bDW56_424rContext.ToListAsync());
+            
         }
 
         // GET: Films/Details/5

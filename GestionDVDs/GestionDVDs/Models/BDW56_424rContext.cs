@@ -1,11 +1,12 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GestionDVDs.Models
 {
-    public partial class BDW56_424rContext : IdentityDbContext 
+    public partial class BDW56_424rContext : IdentityDbContext<ApplicationUser> 
     {
         public BDW56_424rContext()
         {
@@ -34,6 +35,7 @@ namespace GestionDVDs.Models
         public virtual DbSet<Supplements> Supplements { get; set; }
         public virtual DbSet<TypesUtilisateur> TypesUtilisateur { get; set; }
         public virtual DbSet<Utilisateurs> Utilisateurs { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
         public virtual DbSet<UtilisateursPreferences> UtilisateursPreferences { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -49,6 +51,33 @@ namespace GestionDVDs.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>(b =>
+            {
+                b.Property(e => e.Id).HasColumnName("UtilisateurId");
+                // Each User can have many UserClaims
+                b.HasMany(e => e.EmpruntsFilms)
+                    .WithOne()
+                    .HasForeignKey(uc => uc.UtilisateurId)
+                    .IsRequired();
+
+                // Each User can have many UserLogins
+                b.HasMany(e => e.Exemplaires)
+                    .WithOne()
+                    .HasForeignKey(ul => ul.UtilisateurProprietaireId)
+                    .IsRequired();
+
+                // Each User can have many UserTokens
+                b.HasMany(e => e.Films)
+                    .WithOne()
+                    .HasForeignKey(ut => ut.UtilisateurMajid)
+                    .IsRequired();
+
+                // Each User can have many entries in the UserRole join table
+                b.HasMany(e => e.UtilisateursPreferences)
+                    .WithOne()
+                    .HasForeignKey(ur => ur.UtilisateurId)
+                    .IsRequired();
+            });
             modelBuilder.Entity<Acteurs>(entity =>
             {
                 entity.HasKey(e => e.ActeurId);

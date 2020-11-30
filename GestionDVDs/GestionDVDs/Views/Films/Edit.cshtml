@@ -1,12 +1,11 @@
 ﻿@model GestionDVDs.Models.Films
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Modifier";
 }
 
-<h2>Edit</h2>
+<h3>Modifier</h3>
 
-<h4>Films</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -94,14 +93,14 @@
                 <span asp-validation-for="Xtra" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Sauvegarder" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retourner vers le catalogue</a>
 </div>
 
 @section Scripts {
