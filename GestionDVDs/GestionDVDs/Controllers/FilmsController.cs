@@ -19,11 +19,24 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films
-        public async Task<IActionResult> Index()
+      /*  public async Task<IActionResult> Index()
         {
              var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj);
              return View(await bDW56_424rContext.ToListAsync());
             
+        }*/
+       public async Task<IActionResult> Index(string searchString)
+        {
+            var films = from m in _context.Films
+                        select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                films = films.Where(s => s.TitreFrancais.Contains(searchString) || s.TitreOriginal.Contains(searchString)).Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj); ;
+                
+            }
+
+            return View(await films.ToListAsync());
         }
 
         // GET: Films/Details/5
@@ -180,5 +193,6 @@ namespace GestionDVDs.Controllers
         {
             return _context.Films.Any(e => e.FilmId == id);
         }
+    
     }
 }
