@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel;
 
 namespace GestionDVDs.Models
 {
@@ -19,18 +21,22 @@ namespace GestionDVDs.Models
         public int? AnneeSortie { get; set; }
         public int? Categorie { get; set; }
         public int? Format { get; set; }
-        public DateTime DateMaj { get; set; }
-        public string UtilisateurMajId { get; set; }
+        [Required]
+        public DateTime DateMaj { get; set; } = DateTime.Now;
+        [Required]
+        public string UtilisateurMajId { get; set; } 
         public string Resume { get; set; }
         public int? DureeMinutes { get; set; }
         public int? FilmOriginal { get; set; }
         public string ImagePochette { get; set; }
         public int? NbDisques { get; set; }
+        [Required]
         public string TitreFrancais { get; set; }
         public string TitreOriginal { get; set; }
         public bool? VersionEtendue { get; set; }
         public int? RealisateurId { get; set; }
         public int? ProducteurId { get; set; }
+        [Required]
         public string Xtra { get; set; }
 
         public Categories CategorieNavigation { get; set; }

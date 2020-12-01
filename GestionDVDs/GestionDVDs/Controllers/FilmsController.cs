@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionDVDs.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace GestionDVDs.Controllers
 {
     public class FilmsController : Controller
     {
         private readonly BDW56_424rContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public FilmsController(BDW56_424rContext context)
+        public FilmsController(BDW56_424rContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Films
@@ -65,11 +68,13 @@ namespace GestionDVDs.Controllers
         // GET: Films/Create
         public IActionResult Create()
         {
+            ViewData["UtilisateurMajId"] = _userManager.GetUserId(User);
+
             ViewData["Categorie"] = new SelectList(_context.Categories, "CategorieId", "Description");
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description");
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom");
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom");
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel");
+          //  ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel");
             return View();
         }
 
@@ -86,11 +91,12 @@ namespace GestionDVDs.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["Categorie"] = new SelectList(_context.Categories, "CategorieId", "Description", films.Categorie);
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description", films.Format);
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom", films.ProducteurId);
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom", films.RealisateurId);
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajid);
+           // ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
 
@@ -111,7 +117,7 @@ namespace GestionDVDs.Controllers
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description", films.Format);
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom", films.ProducteurId);
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom", films.RealisateurId);
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajid);
+            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
 
@@ -151,7 +157,7 @@ namespace GestionDVDs.Controllers
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description", films.Format);
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom", films.ProducteurId);
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom", films.RealisateurId);
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajid);
+            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
 

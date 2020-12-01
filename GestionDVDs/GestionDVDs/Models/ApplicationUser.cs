@@ -15,6 +15,7 @@ namespace GestionDVDs.Models
               Films = new HashSet<Films>();
               UtilisateursPreferences = new HashSet<UtilisateursPreferences>();
         }
+
         public ICollection<EmpruntsFilms> EmpruntsFilms { get; set; }
         public ICollection<Exemplaires> Exemplaires { get; set; }
         public ICollection<Films> Films { get; set; }

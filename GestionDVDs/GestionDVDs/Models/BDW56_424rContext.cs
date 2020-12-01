@@ -69,7 +69,7 @@ namespace GestionDVDs.Models
                 // Each User can have many UserTokens
                 b.HasMany(e => e.Films)
                     .WithOne()
-                    .HasForeignKey(ut => ut.UtilisateurMajid)
+                    .HasForeignKey(ut => ut.UtilisateurMajId)
                     .IsRequired();
 
                 // Each User can have many entries in the UserRole join table
@@ -148,7 +148,7 @@ namespace GestionDVDs.Models
 
                 entity.Property(e => e.TitreOriginal).HasMaxLength(50);
 
-                entity.Property(e => e.UtilisateurMajid).HasColumnName("UtilisateurMAJId");
+                entity.Property(e => e.UtilisateurMajId).HasColumnName("UtilisateurMAJId");
 
                 entity.Property(e => e.Xtra)
                     .IsRequired()
@@ -177,7 +177,7 @@ namespace GestionDVDs.Models
 
                 entity.HasOne(d => d.UtilisateurMaj)
                     .WithMany(p => p.Films)
-                    .HasForeignKey(d => d.UtilisateurMajid)
+                    .HasForeignKey(d => d.UtilisateurMajId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Films__Utilisate__51851410");
             });
