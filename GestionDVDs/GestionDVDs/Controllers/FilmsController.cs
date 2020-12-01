@@ -193,6 +193,22 @@ namespace GestionDVDs.Controllers
         {
             return _context.Films.Any(e => e.FilmId == id);
         }
-    
+
+        public async Task<IActionResult> MesDVDs()
+        {
+            string userName = User.Identity.Name;
+
+            var userId = _context.Utilisateurs.Where(u => u.NomUtilisateur == userName).First().UtilisateurId.ToString();
+
+            var lstEmprunt = _context.EmpruntsFilms.Where(e => e.UtilisateurId == userId).Select(e => e.ExemplaireId).ToList();
+
+            List<string> lstEmpruntString = lstEmprunt.ConvertAll<string>( i => i.ToString().Substring(0, 6) );
+
+            var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
+                .Where(f => lstEmpruntString.Contains(f.FilmId.ToString()));
+
+            return View(nameof(Index), await bDW56_424rContext.ToListAsync());
+        }
+
     }
 }
