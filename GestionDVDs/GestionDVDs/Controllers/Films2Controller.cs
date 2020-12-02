@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionDVDs.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionDVDs.Controllers
 {
@@ -17,7 +18,7 @@ namespace GestionDVDs.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: Films2
         public async Task<IActionResult> Index()
         {
@@ -26,6 +27,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films2/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,6 +51,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films2/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["Categorie"] = new SelectList(_context.Categories, "CategorieId", "Description");
@@ -64,6 +67,7 @@ namespace GestionDVDs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajid,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
         {
             if (ModelState.IsValid)
@@ -81,6 +85,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films2/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -106,6 +111,7 @@ namespace GestionDVDs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajid,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
         {
             if (id != films.FilmId)
@@ -142,6 +148,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films2/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionDVDs.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionDVDs.Controllers
 {
@@ -22,6 +23,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Messages
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var messages = from message in _context.Messages
@@ -50,6 +52,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Messages/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["ExpediteurId"] = _userManager.GetUserId(User);
@@ -65,6 +68,7 @@ namespace GestionDVDs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("MessageId,ExpediteurId,RecipientId,TempsExpedition,Sujet,Corps")] Messages messages)
         {
             if (ModelState.IsValid)
@@ -80,6 +84,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Messages/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,6 +105,7 @@ namespace GestionDVDs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("MessageId,ExpediteurId,RecipientId,TempsExpedition,Sujet,Corps")] Messages messages)
         {
             if (id != messages.MessageId)
@@ -131,6 +137,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Messages/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -151,6 +158,7 @@ namespace GestionDVDs.Controllers
         // POST: Messages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var messages = await _context.Messages.FindAsync(id);

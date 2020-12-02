@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionDVDs.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionDVDs.Controllers
 {
@@ -22,13 +23,14 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films
-      /*  public async Task<IActionResult> Index()
-        {
-             var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj);
-             return View(await bDW56_424rContext.ToListAsync());
-            
-        }*/
-       public async Task<IActionResult> Index(string searchString)
+        /*  public async Task<IActionResult> Index()
+          {
+               var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj);
+               return View(await bDW56_424rContext.ToListAsync());
+
+          }*/
+        [Authorize]
+        public async Task<IActionResult> Index(string searchString)
         {
             var films = from m in _context.Films
                         select m;
@@ -43,6 +45,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -66,6 +69,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["UtilisateurMajId"] = _userManager.GetUserId(User);
@@ -81,6 +85,7 @@ namespace GestionDVDs.Controllers
         // POST: Films/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajid,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
@@ -101,6 +106,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -126,6 +132,7 @@ namespace GestionDVDs.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajid,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
         {
             if (id != films.FilmId)
@@ -162,6 +169,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: Films/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -187,6 +195,7 @@ namespace GestionDVDs.Controllers
         // POST: Films/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var films = await _context.Films.FindAsync(id);
@@ -199,7 +208,7 @@ namespace GestionDVDs.Controllers
         {
             return _context.Films.Any(e => e.FilmId == id);
         }
-
+        [Authorize]
         public async Task<IActionResult> MesDVDs()
         {
             string userName = User.Identity.Name;

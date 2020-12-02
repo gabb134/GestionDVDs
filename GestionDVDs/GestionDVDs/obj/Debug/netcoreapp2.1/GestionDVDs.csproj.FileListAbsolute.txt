@@ -171,3 +171,7 @@ C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\G
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.pdb
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csprojAssemblyReference.cache
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Create.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.cshtml.g.cs

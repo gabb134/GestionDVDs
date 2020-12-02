@@ -1,41 +1,38 @@
 ﻿@model GestionDVDs.Models.RegisterViewModel
 @{
-    ViewBag.Title = "User Registration";
+    ViewBag.Title = "User Sign In";
 }
-
-@{ Layout = "~/_AuthLayout.cshtml"; }
-
-<form method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+<link rel="stylesheet" href="/css/test.css" />
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+<div class="page">
+    <div class="container2">
+        <div class="left">
+            <div class="login">Inscription</div>
+            <div class="eula">
+                Veuillez vous inscrire pour commencer à explorer les films !<br />
+                <div asp-validation-summary="All" class="text-danger"></div><br />
+                <div asp-validation-for="UserName" class="text-danger" style="font-family: 'Montserrat', sans-serif;"></div><br />
+                <div asp-validation-for="Password" class="text-danger"></div><br />
+                <div asp-validation-for="ConfirmPassword" class="text-danger"></div><br />
+                <div asp-validation-for="Email" class="text-danger"></div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        <div class="right">
+            
+            <div class="formr">
+                <form id="account" method="post">
+                    <label for="username" style="labelr">Nom d'utilisateur</label>
+                    <input asp-for="UserName" id="username" class="input">
+                    <label for="email" style="labelr">Email</label>
+                    <input asp-for="Email" type="email" id="email" class="input">
+                    <label for="password" style="labelr">Mot de passe</label>
+                    <input asp-for="Password" type="password" id="password" class="input">
+                    <label for="password" style="labelr"> Confirmer le Mot de passe</label>
+                    <input asp-for="ConfirmPassword" type="password" id="password2" class="input">
+                    <input type="submit" id="submit" value="Inscription" color="red" class="Submitr" style="color: #f2f2f2">
+                </form>
             </div>
+
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Inscription</button>
-</form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial"></partial>
-}
+</div>

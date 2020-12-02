@@ -9,10 +9,10 @@ namespace GestionDVDs.Models
     {
         [Required(ErrorMessage="Veuillez ajouter un nom d'utilisteur")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Veuillez ajouter une adresse courriel.")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Veuillez ajouter un mot de passe.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [DataType(DataType.Password)]

@@ -2,44 +2,49 @@
 @{
     ViewBag.Title = "User Login";
 }
-@{ Layout = "~/_AuthLayout.cshtml"; }
-<div class="col-md-10 offset-1">
-    <div class="login-form-icon">
-        <i class="fas fa-9x text-secondary"> <img class="card-img-top imageThumbnail" style="max-width: 50%;  max-height : 50%;" src="@Url.Content("~/Images/cle.png")" alt="Card image"></i>
-    </div>
-    <form id="account" method="post">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                </div>
-                <input asp-for="UserName" class="form-control" placeholder="UserName" />
+<link rel="stylesheet" href="/css/test.css" />
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+<div class="page">
+    <div class="container2">
+        <div class="left">
+            <div class="login">Connexion</div>
+            <div class="eula">
+                Veuillez vous connecter pour commencer à explorer les films !<br />
+                <div asp-validation-summary="All" class="text-danger"></div><br />
+                <span asp-validation-for="UserName" class="text-danger" style="font-family: 'Montserrat', sans-serif;"></span><br />
+                <span asp-validation-for="Password" class="text-danger" style="font-family: 'Montserrat', sans-serif;"></span>
             </div>
-            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                </div>
-                <input asp-for="Password" class="form-control" placeholder="Password" />
+        <div class="right">
+            <svg viewBox="0 0 320 300">
+                <defs>
+                    <linearGradient inkscape:collect="always"
+                                    id="linearGradient"
+                                    x1="13"
+                                    y1="193.49992"
+                                    x2="307"
+                                    y2="193.49992"
+                                    gradientUnits="userSpaceOnUse">
+                        <stop style="stop-color:#ff00ff;"
+                              offset="0"
+                              id="stop876" />
+                        <stop style="stop-color:#ff0000;"
+                              offset="1"
+                              id="stop878" />
+                    </linearGradient>
+                </defs>
+                <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+            </svg>
+            <div class="form">
+                <form id="account" method="post">
+                    <label for="email">Nom d'utilisateur</label>
+                    <input asp-for="UserName"  id="email">
+                    <label for="password">Mot de passe</label>
+                    <input asp-for="Password" type="password" id="password">
+                    <input type="submit" id="submit" value="Connexion">
+                </form>
             </div>
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-        <div class="form-group">
             
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
-        </div>
-    </form>
+    </div>
 </div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial"></partial>
-}

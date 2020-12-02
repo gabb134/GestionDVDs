@@ -7,9 +7,9 @@ namespace GestionDVDs.Models
 {
     public class LoginViewModel
     {
-        [Required]
+         [Required(ErrorMessage = "Veuillez inscrire le nom d'utilisateur.")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Veuillez inscrire le mot de passe.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         

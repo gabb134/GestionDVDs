@@ -43,6 +43,7 @@
                     <li><a asp-area="" asp-controller="Films" asp-action="MesDVDs">Mes DVDs</a></li>
                     <li><a asp-area="" asp-controller="Films" asp-action="Create">Ajouter un DVD</a></li>
                     <li><a asp-area="" asp-controller="Messages" asp-action="Index">Messagerie</a></li>
+                   
                     <!-- Dropdown -->
                     <!--   <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -56,7 +57,7 @@
     </li>-->
                     <li>
                         <div class="navbar-left" style="margin-top:11px;">
-                            <form  class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
+                            <form class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
                                 <div class="custom-navbar-buttons col-8">
                                     <p>
                                         <input name="type" style="display:none" value="" />
@@ -93,7 +94,7 @@
                         </li>
 
                     }
-              
+
 
                 </ul>
             </div>
@@ -116,7 +117,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/test.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
