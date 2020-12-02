@@ -12563,23 +12563,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ankit-PC\\.nuget\\packages\\": {},
+    "C:\\Users\\Etudiant\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\ProjetFinal\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+      "projectUniqueName": "C:\\Users\\Etudiant\\Desktop\\420-W56 web-serveur II\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
       "projectName": "GestionDVDs",
-      "projectPath": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\ProjetFinal\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
-      "packagesPath": "C:\\Users\\Ankit-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\ProjetFinal\\GestionDVDs\\GestionDVDs\\GestionDVDs\\obj\\",
+      "projectPath": "C:\\Users\\Etudiant\\Desktop\\420-W56 web-serveur II\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+      "packagesPath": "C:\\Users\\Etudiant\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Etudiant\\Desktop\\420-W56 web-serveur II\\GestionDVDs\\GestionDVDs\\GestionDVDs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ankit-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Etudiant\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -204,7 +204,7 @@ namespace GestionDVDs.Controllers
         {
             string userName = User.Identity.Name;
 
-            var userId = _context.Utilisateurs.Where(u => u.NomUtilisateur == userName).First().UtilisateurId.ToString();
+            var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First();
 
             var lstEmprunt = _context.EmpruntsFilms.Where(e => e.UtilisateurId == userId).Select(e => e.ExemplaireId).ToList();
 
