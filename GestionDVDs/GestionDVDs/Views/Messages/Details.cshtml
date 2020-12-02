@@ -4,10 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Messages</h4>
+    <h3>Details du message</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -38,11 +36,10 @@
             @Html.DisplayNameFor(model => model.Corps)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Corps)
+            <textarea asp-for="Corps" class="form-control" rows="6" maxlength="200" readonly="readonly">@Html.DisplayFor(model => model.Corps)</textarea>
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.MessageId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour a la boite au lettre</a>
 </div>

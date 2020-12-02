@@ -1,48 +1,48 @@
 ﻿@model GestionDVDs.Models.Messages
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Composer";
 }
 
-<h2>Create</h2>
-
-<h4>Messages</h4>
+<h3>Composer un message</h3>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ExpediteurId" class="control-label"></label>
-                <input asp-for="ExpediteurId" class="form-control" value="@ViewBag.ExpediteurId"/>
+                <label asp-for="ExpediteurId" class="control-label">Expediteur: </label>
+                <input value="@ViewBag.ExpediteurName" disabled>
             </div>
             <div class="form-group">
-                <label asp-for="RecipientId" class="control-label"></label>
+                <label asp-for="RecipientId" class="control-label">Recipient: </label>
                 <select asp-for="RecipientId" class="form-control" asp-items="@ViewBag.RecipientId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="TempsExpedition" class="control-label"></label>
-                <input asp-for="TempsExpedition" class="form-control" value="@ViewBag.TempsExpedition"/>
-            </div>
-            <div class="form-group">
                 <label asp-for="Sujet" class="control-label"></label>
-                <input asp-for="Sujet" class="form-control" />
+                <input asp-for="Sujet" class="form-control" maxlength="20"/>
                 <span asp-validation-for="Sujet" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Corps" class="control-label"></label>
-                <input asp-for="Corps" class="form-control" />
+                <textarea asp-for="Corps" class="form-control" rows="6" maxlength="200"></textarea>
                 <span asp-validation-for="Corps" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+                <div class="form-group" style="visibility:hidden">
+                    <label asp-for="TempsExpedition" class="control-label"></label>
+                    <input asp-for="TempsExpedition" class="form-control" value="@ViewBag.TempsExpedition" />
+                </div>
+                <input asp-for="ExpediteurId" class="form-control" value="@ViewBag.ExpediteurId" style="visibility:hidden" />
+                <input type="submit" value="Envoyer" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour a la boite au lettre</a>
 </div>
 
 @section Scripts {

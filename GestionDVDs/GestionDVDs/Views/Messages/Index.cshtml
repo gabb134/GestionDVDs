@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<GestionDVDs.Models.Messages>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Boite au lettres";
 }
 
-<h2>Index</h2>
+<h3>Boite au lettres</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Composer un nouveau message</a>
 </p>
 <table class="table">
     <thead>
@@ -16,16 +16,10 @@
                 @Html.DisplayNameFor(model => model.ExpediteurId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RecipientId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TempsExpedition)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Sujet)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Corps)
+                Temps d'expedition
             </th>
             <th></th>
         </tr>
@@ -37,21 +31,14 @@
                 @Html.DisplayFor(modelItem => item.ExpediteurId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RecipientId)
+                @Html.DisplayFor(modelItem => item.Sujet)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TempsExpedition)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sujet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Corps)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MessageId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MessageId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MessageId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.MessageId">Supprimer</a>
             </td>
         </tr>
 }

@@ -53,6 +53,7 @@ namespace GestionDVDs.Controllers
         public IActionResult Create()
         {
             ViewData["ExpediteurId"] = _userManager.GetUserId(User);
+            ViewData["ExpediteurName"] = _userManager.GetUserName(User);
             ViewData["RecipientId"] = new SelectList(_userManager.Users, "Id", "UserName");
             ViewData["TempsExpedition"] = DateTime.Now.ToString();
 
