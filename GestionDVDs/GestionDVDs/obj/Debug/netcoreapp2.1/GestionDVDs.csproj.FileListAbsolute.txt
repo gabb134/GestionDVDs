@@ -155,7 +155,6 @@ C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\G
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Create.g.cshtml.cs
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.g.cshtml.cs
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.g.cshtml.cs
-C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Edit.g.cshtml.cs
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.g.cshtml.cs
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\ProjetFinal\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
