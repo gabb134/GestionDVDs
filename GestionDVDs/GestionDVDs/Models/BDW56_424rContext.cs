@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using GestionDVDs.Models;
 
 namespace GestionDVDs.Models
 {
@@ -37,13 +38,14 @@ namespace GestionDVDs.Models
         public virtual DbSet<Utilisateurs> Utilisateurs { get; set; }
         public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
         public virtual DbSet<UtilisateursPreferences> UtilisateursPreferences { get; set; }
+        public virtual DbSet<GestionDVDs.Models.Messages> Messages { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=tcp:424sql.cgodin.qc.ca,5433;Database=BDW56_424r;Trusted_Connection=True;User ID=W56equipe424r; Password=Secret36512;Integrated Security=false");
             }
         }

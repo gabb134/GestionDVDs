@@ -175,7 +175,7 @@ namespace GestionDVDs.Migrations
                     b.Property<string>("TitreOriginal")
                         .HasMaxLength(50);
 
-                    b.Property<string>("UtilisateurMajid")
+                    b.Property<string>("UtilisateurMajId")
                         .IsRequired()
                         .HasColumnName("UtilisateurMAJId");
 
@@ -196,7 +196,7 @@ namespace GestionDVDs.Migrations
 
                     b.HasIndex("RealisateurId");
 
-                    b.HasIndex("UtilisateurMajid");
+                    b.HasIndex("UtilisateurMajId");
 
                     b.ToTable("Films");
                 });
@@ -281,6 +281,34 @@ namespace GestionDVDs.Migrations
                     b.HasKey("LangueId");
 
                     b.ToTable("Langues");
+                });
+
+            modelBuilder.Entity("GestionDVDs.Models.Messages", b =>
+                {
+                    b.Property<string>("MessageId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Corps")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.Property<string>("ExpediteurId")
+                        .IsRequired();
+
+                    b.Property<string>("RecipientId")
+                        .IsRequired();
+
+                    b.Property<string>("Sujet")
+                        .IsRequired()
+                        .HasMaxLength(20);
+
+                    b.Property<DateTime>("TempsExpedition");
+
+                    b.HasKey("MessageId");
+
+                    b.HasIndex("RecipientId");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("GestionDVDs.Models.Preferences", b =>
@@ -567,7 +595,7 @@ namespace GestionDVDs.Migrations
 
                     b.HasOne("GestionDVDs.Models.ApplicationUser", "UtilisateurMaj")
                         .WithMany("Films")
-                        .HasForeignKey("UtilisateurMajid")
+                        .HasForeignKey("UtilisateurMajId")
                         .HasConstraintName("FK__Films__Utilisate__51851410");
                 });
 
@@ -621,6 +649,14 @@ namespace GestionDVDs.Migrations
                         .WithMany("FilmsSupplements")
                         .HasForeignKey("SupplementId")
                         .HasConstraintName("FK__FilmsSupp__Suppl__62AFA012");
+                });
+
+            modelBuilder.Entity("GestionDVDs.Models.Messages", b =>
+                {
+                    b.HasOne("GestionDVDs.Models.ApplicationUser", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GestionDVDs.Models.Utilisateurs", b =>

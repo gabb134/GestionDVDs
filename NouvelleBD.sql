@@ -19,6 +19,7 @@ DROP TABLE Langues
 DROP TABLE Formats
 DROP TABLE Categories
 DROP TABLE Acteurs
+DROP TABLE Messages
 
 
 CREATE TABLE Acteurs (
@@ -26,7 +27,6 @@ CREATE TABLE Acteurs (
     Nom NVARCHAR(50) NOT NULL,
     Sexe NCHAR(1) NOT NULL
 )
-
 SET IDENTITY_INSERT Acteurs ON
 
 INSERT INTO Acteurs (ActeurId, Nom, Sexe) VALUES
@@ -73,7 +73,16 @@ INSERT INTO Acteurs (ActeurId, Nom, Sexe) VALUES
 
 SET IDENTITY_INSERT Acteurs OFF
 
+------------------------------------------------------------------------------
 
+CREATE TABLE Messages (
+	MessageId INT NOT NULL PRIMARY KEY,
+	ExpediteurId NVARCHAR(50) NOT NULL,
+	RecipientId NVARCHAR(50) NOT NULL,
+	TempsExpedition DateTime NOT NULL,
+	Sujet NVARCHAR(20) NOT NULL,
+	Corps NVARCHAR(200) NOT NULL
+)
 ------------------------------------------------------------------------------
 
 CREATE TABLE Categories (

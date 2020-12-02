@@ -1,0 +1,48 @@
+﻿@model GestionDVDs.Models.Messages
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Messages</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpediteurId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExpediteurId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RecipientId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TempsExpedition)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TempsExpedition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sujet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sujet)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Corps)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Corps)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MessageId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

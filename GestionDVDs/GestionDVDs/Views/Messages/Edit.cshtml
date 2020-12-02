@@ -1,0 +1,54 @@
+﻿@model GestionDVDs.Models.Messages
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Messages</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MessageId" />
+            <div class="form-group">
+                <label asp-for="ExpediteurId" class="control-label"></label>
+                <input asp-for="ExpediteurId" class="form-control" />
+                <span asp-validation-for="ExpediteurId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientId" class="control-label"></label>
+                <input asp-for="RecipientId" class="form-control" />
+                <span asp-validation-for="RecipientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempsExpedition" class="control-label"></label>
+                <input asp-for="TempsExpedition" class="form-control" />
+                <span asp-validation-for="TempsExpedition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sujet" class="control-label"></label>
+                <input asp-for="Sujet" class="form-control" />
+                <span asp-validation-for="Sujet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Corps" class="control-label"></label>
+                <input asp-for="Corps" class="form-control" />
+                <span asp-validation-for="Corps" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
