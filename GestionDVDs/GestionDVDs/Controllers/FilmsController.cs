@@ -72,6 +72,15 @@ namespace GestionDVDs.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            var filmId = (DateTime.Now.Year.ToString().Substring(2)) + (DateTime.Now.Month.ToString());
+            var films = from film in _context.Films
+                        where film.FilmId.ToString().Substring(0,4) == filmId
+                        select film;
+
+            var filmCount = (films.Count() + 1).ToString().PadLeft(2, '0');
+            filmId += filmCount;
+
+            ViewData["FilmId"] = filmId;
             ViewData["UtilisateurMajId"] = _userManager.GetUserId(User);
 
             ViewData["Categorie"] = new SelectList(_context.Categories, "CategorieId", "Description");
@@ -88,7 +97,7 @@ namespace GestionDVDs.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajid,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
+        public async Task<IActionResult> Create([Bind("FilmId,AnneeSortie,Categorie,Format,DateMaj,UtilisateurMajId,Resume,DureeMinutes,FilmOriginal,ImagePochette,NbDisques,TitreFrancais,TitreOriginal,VersionEtendue,RealisateurId,ProducteurId,Xtra")] Films films)
         {
             if (ModelState.IsValid)
             {
