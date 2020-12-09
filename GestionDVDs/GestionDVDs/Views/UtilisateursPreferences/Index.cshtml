@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GestionDVDs.Models.UtilisateursPreferences>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Valeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utilisateur)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preference.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilisateur.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PreferenceId">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.PreferenceId">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.PreferenceId">Supprimer</a>
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -175,3 +175,8 @@ C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3Bo
 C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.cshtml.g.cs
 C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.cshtml.g.cs
 C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Create.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Delete.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Details.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet_3BonneVerison\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.cshtml.g.cs
