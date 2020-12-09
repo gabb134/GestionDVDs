@@ -220,6 +220,7 @@ namespace GestionDVDs.Controllers
         [Authorize]
         public async Task<IActionResult> MesDVDs()
         {
+           
             string userName = User.Identity.Name;
 
             var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First();
@@ -230,8 +231,9 @@ namespace GestionDVDs.Controllers
 
             var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
                 .Where(f => lstEmpruntString.Contains(f.FilmId.ToString()));
-
+          //  if(userId=="1")
             return View(nameof(Index), await bDW56_424rContext.ToListAsync());
+            //else return RedirectToAction(nameof(Index));
         }
 
     }
