@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Ajouter";
 }
+<authorization>
+    <allow roles="Administrators, Supervisors" />
+    <deny users="*" />
+</authorization>
 
 <h3>Ajouter un film</h3>
 <hr />

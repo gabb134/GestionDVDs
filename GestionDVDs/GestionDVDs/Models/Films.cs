@@ -16,6 +16,7 @@ namespace GestionDVDs.Models
             FilmsSousTitres = new HashSet<FilmsSousTitres>();
             FilmsSupplements = new HashSet<FilmsSupplements>();
         }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Key()]
         public int FilmId { get; set; }
         public int? AnneeSortie { get; set; }
@@ -30,13 +31,13 @@ namespace GestionDVDs.Models
         public int? FilmOriginal { get; set; }
         public string ImagePochette { get; set; }
         public int? NbDisques { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Veuillez ajouter le titre du film.")]
         public string TitreFrancais { get; set; }
         public string TitreOriginal { get; set; }
         public bool? VersionEtendue { get; set; }
         public int? RealisateurId { get; set; }
         public int? ProducteurId { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Veuillez ajouter une reference ")]
         public string Xtra { get; set; }
 
         public Categories CategorieNavigation { get; set; }

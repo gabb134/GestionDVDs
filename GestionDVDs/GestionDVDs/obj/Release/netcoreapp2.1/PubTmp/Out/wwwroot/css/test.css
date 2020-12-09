@@ -1,0 +1,195 @@
+﻿
+@import url('https://rsms.me/inter/inter-ui.css');
+
+::selection {
+	background: #2D2F36;
+}
+
+::-webkit-selection {
+	background: #2D2F36;
+}
+
+::-moz-selection {
+	background: #2D2F36;
+}
+
+body {
+	background: white;
+	font-family: 'Inter UI', sans-serif;
+	margin: 0;
+	padding: 20px;
+}
+
+.page {
+	margin-top: 5%;
+	background: #e2e2e5;
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 40px);
+	position: sticky;
+	place-content: center;
+	width: 768px;
+}
+
+@media (max-width: 767px) {
+	.page {
+		height: auto;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+.container2 {
+	display: flex;
+	height: 600px;
+	margin: 0 auto;
+	width: 1240px;
+}
+
+@media (max-width: 767px) {
+	.container {
+		flex-direction: column;
+		height: 630px;
+		width: 320px;
+	}
+}
+
+.left {
+	background: white;
+	height: calc(100% - 40px);
+	top: 20px;
+	position: relative;
+	width: 50%;
+}
+
+@media (max-width: 767px) {
+	.left {
+		height: 100%;
+		left: 20px;
+		width: calc(100% - 40px);
+		max-height: 270px;
+	}
+}
+
+.login {
+	font-size: 55px;
+	font-weight: 900;
+	margin: 80px 40px 40px;
+}
+
+.eula {
+	color: #999;
+	font-size: 28px; /*double*/
+	line-height: 1.5;
+	margin: 40px; /*double*/
+}
+
+.right {
+	background: #474A59;
+	box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+	color: #F1F1F2;
+	position: relative;
+	width: 50%;
+}
+
+@media (max-width: 767px) {
+	.right {
+		flex-shrink: 0;
+		height: 100%;
+		width: 100%;
+		max-height: 350px;
+	}
+}
+
+svg {
+	position: absolute;
+	width: 640px; /*double*/
+}
+
+path {
+	fill: none;
+	stroke: url(#linearGradient);
+	;
+	stroke-width: 4;
+	stroke-dasharray: 240 1386;
+}
+
+.form {
+	margin: 80px; /*double*/
+	position: absolute;
+}
+
+.formr {
+	margin: 10px; /*double*/
+	margin-top: 5px;
+	position: absolute;
+
+}
+
+label {
+	color: #c2c2c5;
+	display: block;
+	font-size: 28px; /*double*/
+	height: 32px; /*double*/
+	margin-top: 40px;/*double*/
+	margin-bottom: 10px;/*double*/
+}
+
+.labelr {
+	color: #c2c2c5;
+	display: block;
+	font-size: 28px; /*double*/
+	height: 32px; /*double*/
+	margin-top: 10px; /*double*/
+	margin-bottom: 10px; /*double*/
+}
+input {
+	background: transparent;
+	border: 0;
+	color: #f2f2f2;
+	font-size: 28px;/*double*/
+	height: 60px;/*double*/
+	line-height: 60px;/*double*/
+	outline: none !important;
+	width: 100%;
+}
+.input {
+	background: #f2f2f2;
+	border: 20;
+	color: black;
+	font-size: 28px; /*double*/
+	height: 45px; /*double*/
+	line-height: 45px; /*double*/
+	/*outline: none !important;*/
+	width: 100%;
+	outline-color: coral;
+	stroke: url(#linearGradient);
+	margin-bottom: -30px;
+	margin-top: -5px;
+}
+
+	input::-moz-focus-inner {
+		border: 0;
+	}
+.input::-moz-focus-inner {
+	border: 10;
+}
+#submit {
+	color: #707075;
+	margin-top: 80px; /*double*/
+	transition: color 300ms;
+}
+.Submitr {
+	
+	margin-top: 20px; /*double*/
+	transition: color 300ms;
+	margin-bottom: -10px;
+	margin-top: -10px;
+}
+	#submit:focus {
+		color: #f2f2f2;
+	}
+
+	#submit:active {
+		color: #d0d0d2;
+	}
