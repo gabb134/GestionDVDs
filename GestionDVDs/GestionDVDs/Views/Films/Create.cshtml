@@ -10,88 +10,99 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                <label class="control-label">Id du film</label>
-                <input asp-for="FilmId" class="form-control" />
-                <span asp-validation-for="FilmId" class="text-danger"></span>
-            </div> 
             <div class="form-group">
-                <label asp-for="AnneeSortie" class="control-label"></label>
-                <input asp-for="AnneeSortie" class="form-control" />
+                <label asp-for="TitreFrancais" class="control-label">Titre francais</label>*
+                <input asp-for="TitreFrancais" class="form-control" />
+                <span asp-validation-for="TitreFrancais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TitreOriginal" class="control-label">Titre original</label>
+                <input asp-for="TitreOriginal" class="form-control" />
+                <span asp-validation-for="TitreOriginal" class="text-danger"></span>
+            </div>
+            <div class="form-group hidden">
+                <label class="control-label">Id du film*</label>
+                <input asp-for="FilmId" class="form-control" value="@ViewBag.FilmId" />
+                <span asp-validation-for="FilmId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnneeSortie" class="control-label">Annee sortie</label>
+                <input min="1888" max="@DateTime.Now.Year" asp-for="AnneeSortie" class="form-control" />
                 <span asp-validation-for="AnneeSortie" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Categorie" class="control-label"></label>
-                <select asp-for="Categorie" class ="form-control" asp-items="ViewBag.Categorie"></select>
+                <select asp-for="Categorie" class="form-control" asp-items="ViewBag.Categorie"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Format" class="control-label"></label>
-                <select asp-for="Format" class ="form-control" asp-items="ViewBag.Format"></select>
+                <select asp-for="Format" class="form-control" asp-items="ViewBag.Format"></select>
             </div>
-                <div class="form-group">
+            <div class="form-group hidden">
                 <label asp-for="DateMaj" class="control-label"></label>
-                <input asp-for="DateMaj" class="form-control" />
-                <span asp-validation-for="DateMaj" class="text-danger"></span> 
-            </div> 
-                <div class="form-group">
+                <input asp-for="DateMaj" class="form-control" value="@DateTime.Now" />
+                <span asp-validation-for="DateMaj" class="text-danger"></span>
+            </div>
+            <div class="form-group hidden">
                 <label asp-for="UtilisateurMajId" class="control-label"></label>
-                <input asp-for="UtilisateurMajId" class ="form-control" value="@ViewBag.UtilisateurMajid">
-            </div> 
+                <input asp-for="UtilisateurMajId" class="form-control" value="@ViewBag.UtilisateurMajid">
+                <span asp-validation-for="UtilisateurMajId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Resume" class="control-label"></label>
                 <input asp-for="Resume" class="form-control" />
                 <span asp-validation-for="Resume" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DureeMinutes" class="control-label"></label>
-                <input asp-for="DureeMinutes" class="form-control" />
+                <label asp-for="DureeMinutes" class="control-label">Duree en minutes</label>
+                <input min="0" asp-for="DureeMinutes" class="form-control" />
                 <span asp-validation-for="DureeMinutes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FilmOriginal" class="control-label"></label>
-                <input asp-for="FilmOriginal" class="form-control"/>
-                <span asp-validation-for="FilmOriginal" class="text-danger"></span>
+                <div class="radio-inline">
+                    <label><input type="radio" value="1" checked asp-for="FilmOriginal" class="form-control" />Film original</label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" value="0" asp-for="FilmOriginal" class="form-control" />Film non-original</label>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="ImagePochette" class="control-label"></label>
+                <!-- <label asp-for="VersionEtendue" class="control-label">Version</label> -->
+                <div class="radio-inline">
+                    <label><input type="radio" value="false" checked asp-for="VersionEtendue" class="form-control" />Version originale</label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" value="true" asp-for="VersionEtendue" class="form-control" />Version etendue</label>
+                </div>
+                <!-- <span asp-validation-for="VersionEtendue" class="text-danger"></span> -->
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RealisateurId" class="control-label">Realisateur</label>
+                <select asp-for="RealisateurId" class="form-control" asp-items="ViewBag.RealisateurId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProducteurId" class="control-label">Producteur</label>
+                <select asp-for="ProducteurId" class="form-control" asp-items="ViewBag.ProducteurId"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImagePochette" class="control-label">Fichier d'affiche </label>
                 <input asp-for="ImagePochette" class="form-control" />
                 <span asp-validation-for="ImagePochette" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NbDisques" class="control-label"></label>
-                <input asp-for="NbDisques" class="form-control" />
+                <label asp-for="NbDisques" class="control-label">Nombre de disques</label>
+                <input min="0" max="10" asp-for="NbDisques" class="form-control" />
                 <span asp-validation-for="NbDisques" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TitreFrancais" class="control-label"></label>
-                <input asp-for="TitreFrancais" class="form-control" />
-                <span asp-validation-for="TitreFrancais" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TitreOriginal" class="control-label"></label>
-                <input asp-for="TitreOriginal" class="form-control" />
-                <span asp-validation-for="TitreOriginal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VersionEtendue" class="control-label"></label>
-                <input asp-for="VersionEtendue" class="form-control"/>
-                <span asp-validation-for="VersionEtendue" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RealisateurId" class="control-label"></label>
-                <select asp-for="RealisateurId" class ="form-control" asp-items="ViewBag.RealisateurId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProducteurId" class="control-label"></label>
-                <select asp-for="ProducteurId" class ="form-control" asp-items="ViewBag.ProducteurId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Xtra" class="control-label"></label>
+                <label asp-for="Xtra" class="control-label">Reference</label>*
                 <input asp-for="Xtra" class="form-control" />
                 <span asp-validation-for="Xtra" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Ajouter au catalogue" class="btn btn-default" />
             </div>
         </form>
     </div>
