@@ -244,3 +244,13 @@ C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorCoreGenerate.cache
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.dll
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.pdb
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Create.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Create.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Delete.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Details.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.g.cshtml.cs
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Emprunt\Index.g.cshtml.cs
