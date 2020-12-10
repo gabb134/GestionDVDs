@@ -82,10 +82,27 @@ namespace GestionDVDs.Controllers
             var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First();
 
             // utilisateurs preferences
+            var userColor = from u in _context.UtilisateursPreferences
+                            where u.UtilisateurId == userId && u.PreferenceId == 1
+                            select u.Valeur;
+            var userTextColor = from u in _context.UtilisateursPreferences
+                            where u.UtilisateurId == userId && u.PreferenceId == 2
+                            select u.Valeur;
             var userPreference = from u in _context.UtilisateursPreferences
                                  where u.UtilisateurId == userId && u.PreferenceId == 7
                                  select u.Valeur;
-
+            string couleurTexte = "";
+            foreach (var item in userTextColor)
+            {
+                couleurTexte = item.ToString();
+            }
+            string couleurFond = "";
+            foreach (var item in userColor)
+            {
+                couleurFond = item.ToString();
+            }
+            if (couleurFond == "Blue")
+                ViewData["CouleurFond"] = "blue";
             int itemParPage = 0;
 
             foreach(var item in userPreference)
