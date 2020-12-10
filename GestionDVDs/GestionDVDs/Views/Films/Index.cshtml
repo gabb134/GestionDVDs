@@ -6,12 +6,9 @@
 
 <br />
 
-<form id="frmSaisie" method="post">
+<form id="frmSaisie" action="Films/Index" method="post">
     <div class="container" style="margin: 20px">
-        <div class="col-md-12" style="margin-bottom:30px; margin-left:850px">
-
-            @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.pageSize, new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;" })
-        </div>
+     
         <div class="panel-group">
             <div class="row">
                 @foreach (var item in Model)
