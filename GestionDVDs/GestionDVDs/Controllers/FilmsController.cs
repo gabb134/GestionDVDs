@@ -30,18 +30,82 @@ namespace GestionDVDs.Controllers
 
           }*/
         [Authorize]
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string searchString2)
         {
+            //Pagination
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+
             var films = from m in _context.Films
                         select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 films = films.Where(s => s.TitreFrancais.Contains(searchString) || s.TitreOriginal.Contains(searchString)).Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj); ;
-                
+
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    films = films.OrderBy(s => s.TitreFrancais);
+                    break;
+                case "Date":
+                    films = films.OrderBy(s => s.AnneeSortie);
+                    break;
+                case "date_desc":
+                    films = films.OrderByDescending(s => s.AnneeSortie);
+                    break;
+                default:
+                    films = films.OrderBy(s => s.TitreFrancais);
+                    break;
             }
 
-            return View(await films.ToListAsync());
+
+            List<SelectListItem> ObjList = new List<SelectListItem>()
+            {
+                new SelectListItem { Text = "Choisir le nombre de films par page", Value = "-11" },
+                new SelectListItem { Text = "4", Value = "1" },
+                new SelectListItem { Text = "6", Value = "2" },
+                new SelectListItem { Text = "8", Value = "3" },
+                new SelectListItem { Text = "10", Value = "4" },
+
+            };
+            //Assigning generic list to ViewBag
+            ViewBag.pageSize = ObjList;
+
+            /*  string page = "";
+
+              //int pageSize = ViewBag.page;
+              foreach (var item in ObjList)
+              {
+                  page = item.Text;
+                 // pageSize = Convert.ToInt32(page)
+
+              }*/
+
+            //int pageSize = Convert.ToInt32( Request.Form["ddlPagesize"]);
+
+
+            return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, 8));
+
+            // int pageSize = Convert.ToInt32(ViewBag.pageSize);
+
+
+            //return View(await films.ToListAsync());
         }
 
         // GET: Films/Details/5
@@ -220,20 +284,36 @@ namespace GestionDVDs.Controllers
         [Authorize]
         public async Task<IActionResult> MesDVDs()
         {
-           
+
             string userName = User.Identity.Name;
 
             var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First();
 
             var lstEmprunt = _context.EmpruntsFilms.Where(e => e.UtilisateurId == userId).Select(e => e.ExemplaireId).ToList();
 
-            List<string> lstEmpruntString = lstEmprunt.ConvertAll<string>( i => i.ToString().Substring(0, 6) );
+            List<string> lstEmpruntString = lstEmprunt.ConvertAll<string>(i => i.ToString().Substring(0, 6));
 
-            var bDW56_424rContext = _context.Films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
+            var films = from m in _context.Films
+                        select m;
+
+            films = films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
                 .Where(f => lstEmpruntString.Contains(f.FilmId.ToString()));
-          //  if(userId=="1")
-            return View(nameof(Index), await bDW56_424rContext.ToListAsync());
-            //else return RedirectToAction(nameof(Index));
+
+            //return View(nameof(Index), await films.ToListAsync());
+            List<SelectListItem> ObjList = new List<SelectListItem>()
+            {
+                new SelectListItem { Text = "Choisir le nombre de films par page", Value = "-11" },
+                new SelectListItem { Text = "4", Value = "1" },
+                new SelectListItem { Text = "6", Value = "2" },
+                new SelectListItem { Text = "8", Value = "3" },
+                new SelectListItem { Text = "10", Value = "4" },
+
+            };
+            //Assigning generic list to ViewBag
+            ViewBag.pageSize = ObjList;
+
+            int pageSize = 8;
+            return View(nameof(Index), await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), 1, pageSize));
         }
 
     }

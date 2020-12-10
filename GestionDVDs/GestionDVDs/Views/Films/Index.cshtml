@@ -1,47 +1,53 @@
-﻿@model IEnumerable<GestionDVDs.Models.Films>
+﻿@model PaginatedList<GestionDVDs.Models.Films>
 
 @{
     ViewData["Title"] = "Catalogue";
 }
 
 <br />
-<div class="container"  style="margin: 20px">
-    <div class="panel-group">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-10">
-                    <div class="panel panel-primary">
 
-                        <div class="panel-heading" style="min-height:110px; max-height:110px;">
-                            <h4 style="font-weight:bold;">
-                                @Html.DisplayFor(modelItem => item.TitreFrancais)
-                                @{if (item.AnneeSortie != null)
-                                    {<i style="font-size:small;"> (@Html.DisplayFor(modelItem => item.AnneeSortie)) </i>}
-                                }
-                            </h4>
+<form id="frmSaisie" method="post">
+    <div class="container" style="margin: 20px">
+        <div class="col-md-12" style="margin-bottom:30px; margin-left:850px">
 
-                            <h5 style="font-style: italic"> @Html.DisplayFor(modelItem => item.TitreOriginal) </h5>
-                        </div>
+            @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.pageSize, new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;" })
+        </div>
+        <div class="panel-group">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-10">
+                        <div class="panel panel-primary">
 
-                        <div class="panel-body" style="max-height:250px">
-                            @{
-                                var path = System.IO.Path.GetFullPath("wwwroot/images/" + @item.FilmId + ".jpg");
+                            <div class="panel-heading" style="min-height:110px; max-height:110px;">
+                                <h4 style="font-weight:bold;">
+                                    @Html.DisplayFor(modelItem => item.TitreFrancais)
+                                    @{if (item.AnneeSortie != null)
+                                        {<i style="font-size:small;"> (@Html.DisplayFor(modelItem => item.AnneeSortie)) </i>}
+                                    }
+                                </h4>
 
-                                if (!System.IO.File.Exists(path))
-                                {
-                                    <a asp-action="Details" asp-route-id="@item.FilmId">
-                                        <img class="img-thumbnail" style="max-width:200px;  max-height : 200px;"
-                                             src="~/images/poster.jpg" alt="Aucune image">
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a asp-action="Details" asp-route-id="@item.FilmId">
-                                        <img class="img-thumbnail" style="max-width:200px;  max-height : 200px;"
-                                             src="~/images/@(item.FilmId).jpg" alt="Poster du film">
-                                    </a>
-                                }
+                                <h5 style="font-style: italic"> @Html.DisplayFor(modelItem => item.TitreOriginal) </h5>
+                            </div>
+
+                            <div class="panel-body" style="max-height:250px">
+                                @{
+                                    var path = System.IO.Path.GetFullPath("wwwroot/images/" + @item.FilmId + ".jpg");
+
+                                    if (!System.IO.File.Exists(path))
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.FilmId">
+                                            <img class="img-thumbnail" style="max-width:200px;  max-height : 200px;"
+                                                 src="~/images/poster.jpg" alt="Aucune image">
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.FilmId">
+                                            <img class="img-thumbnail" style="max-width:200px;  max-height : 200px;"
+                                                 src="~/images/@(item.FilmId).jpg" alt="Poster du film">
+                                        </a>
+                                    }
                                 }
                                 <p>
                                     @Html.DisplayFor(modelItem => item.CategorieNavigation.Description)
@@ -62,11 +68,31 @@
                                     <a asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |
                                     <a asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a>
                                 </p>
+                            </div>
                         </div>
+                        <br /><br />
                     </div>
-                    <br /><br />
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-pageNumber="@(Model.PageIndex - 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @prevDisabled">
+        Précedent
+    </a>
+    <a asp-action="Index"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-pageNumber="@(Model.PageIndex + 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @nextDisabled">
+        Suivant
+    </a>
+</form>
