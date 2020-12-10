@@ -2,12 +2,13 @@
 
 @{
     ViewData["Title"] = "Catalogue";
+    
 }
 
 <br />
 
 <form id="frmSaisie" method="post">
-    <div class="container" style="margin: 20px">
+    <div class="container" style="margin: 20px"  >
         <div class="col-md-12" style="margin-bottom:30px; margin-left:850px">
 
             @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.pageSize, new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;" })
@@ -17,7 +18,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-10">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-primary" >
 
                             <div class="panel-heading" style="min-height:110px; max-height:110px;">
                                 <h4 style="font-weight:bold;">

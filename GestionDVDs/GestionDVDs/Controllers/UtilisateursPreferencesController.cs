@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using GestionDVDs.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionDVDs.Controllers
 {
@@ -21,6 +22,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: UtilisateursPreferences
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             string userName = User.Identity.Name;
@@ -30,6 +32,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: UtilisateursPreferences/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -50,6 +53,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: UtilisateursPreferences/Create
+        [Authorize]
         public IActionResult Create()
         {
             string userName = User.Identity.Name;
@@ -62,6 +66,7 @@ namespace GestionDVDs.Controllers
         // POST: UtilisateursPreferences/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UtilisateurId,PreferenceId,Valeur")] UtilisateursPreferences utilisateursPreferences)
@@ -78,6 +83,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: UtilisateursPreferences/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -99,6 +105,7 @@ namespace GestionDVDs.Controllers
         // POST: UtilisateursPreferences/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("UtilisateurId,PreferenceId,Valeur")] UtilisateursPreferences utilisateursPreferences)
@@ -134,6 +141,7 @@ namespace GestionDVDs.Controllers
         }
 
         // GET: UtilisateursPreferences/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -154,6 +162,7 @@ namespace GestionDVDs.Controllers
         }
 
         // POST: UtilisateursPreferences/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
