@@ -42,3 +42,8 @@ C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\G
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\GestionDVDs.dll
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\GestionDVDs.pdb
 C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Release\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.g.cshtml.cs
