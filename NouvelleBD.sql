@@ -19,7 +19,6 @@ DROP TABLE Langues
 DROP TABLE Formats
 DROP TABLE Categories
 DROP TABLE Acteurs
-DROP TABLE Messages
 
 
 CREATE TABLE Acteurs (
@@ -27,6 +26,7 @@ CREATE TABLE Acteurs (
     Nom NVARCHAR(50) NOT NULL,
     Sexe NCHAR(1) NOT NULL
 )
+
 SET IDENTITY_INSERT Acteurs ON
 
 INSERT INTO Acteurs (ActeurId, Nom, Sexe) VALUES
@@ -73,16 +73,7 @@ INSERT INTO Acteurs (ActeurId, Nom, Sexe) VALUES
 
 SET IDENTITY_INSERT Acteurs OFF
 
-------------------------------------------------------------------------------
 
-CREATE TABLE Messages (
-	MessageId INT NOT NULL PRIMARY KEY,
-	ExpediteurId NVARCHAR(50) NOT NULL,
-	RecipientId NVARCHAR(50) NOT NULL,
-	TempsExpedition DateTime NOT NULL,
-	Sujet NVARCHAR(20) NOT NULL,
-	Corps NVARCHAR(200) NOT NULL
-)
 ------------------------------------------------------------------------------
 
 CREATE TABLE Categories (
@@ -730,3 +721,74 @@ INSERT INTO FilmsSupplements VALUES
     (181201,1),
     (181201,2),
     (181201,8);
+
+	/* Ajout des préférences par défaut pour chaque utilisateur*/
+
+	 insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,1,'Bleu' from AspNetUsers
+
+
+
+  insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,2,'Noir' from AspNetUsers
+
+
+
+  insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,3,'Oui' from AspNetUsers
+
+
+
+   insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,4,'Oui' from AspNetUsers
+
+   insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,5,'Oui' from AspNetUsers
+
+    insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,6,'~/background/default.jpg' from AspNetUsers
+
+  insert into UtilisateursPreferences
+  (
+	UtilisateurId,
+	PreferenceId,
+	Valeur
+  )
+  
+  select UtilisateurId,7,'12' from AspNetUsers
