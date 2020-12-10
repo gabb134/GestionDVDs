@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RSBTnQ/fwSVIBylxwUpWovx1NqwjV5LQ+o8/iCAHfXQm5994DL3LKboIzR1DcIN+k08Wt4+4GWkSKmcRwh4I6Q==",
+  "dgSpecHash": "TeuOiItulrsBp81VEBpOpBLnA7PGlIjxOsJpHrOPcdQ5LwfeUmyJitT3oZ9pcf3ZT/cJlem/7Zii5RKowV3+AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+  "projectFilePath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\riben\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\riben\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",

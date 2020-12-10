@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {}
+    "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {
+    "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+        "projectUniqueName": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
         "projectName": "GestionDVDs",
-        "projectPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+        "projectPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
         "packagesPath": "C:\\Users\\riben\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet_3BonneVerison\\GestionDVDs\\GestionDVDs\\obj\\",
+        "outputPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\riben\\AppData\\Roaming\\NuGet\\NuGet.Config",

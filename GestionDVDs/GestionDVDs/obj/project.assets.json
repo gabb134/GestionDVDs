@@ -12563,23 +12563,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ankit-PC\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\riben\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+      "projectUniqueName": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
       "projectName": "GestionDVDs",
-      "projectPath": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
-      "packagesPath": "C:\\Users\\Ankit-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ankit-PC\\Gerald-Godin\\Programmation Serveur 2\\VS Projects\\GestionDVDs\\GestionDVDs\\GestionDVDs\\obj\\",
+      "projectPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+      "packagesPath": "C:\\Users\\riben\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\riben\\Documents\\Programmation web serveur II\\Projets\\Projet3\\Projet3_9-12\\GestionDVDs\\GestionDVDs\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ankit-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\riben\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12647,7 +12643,7 @@
             "version": "[2.1.14, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.14, )"
@@ -12657,6 +12653,7 @@
             "version": "[2.1.1, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -12671,10 +12668,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
