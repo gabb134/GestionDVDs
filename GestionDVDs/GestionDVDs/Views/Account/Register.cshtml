@@ -1,15 +1,24 @@
 ﻿@model GestionDVDs.Models.RegisterViewModel
 @{
-    ViewBag.Title = "User Sign In";
+    ViewBag.Title = "Nouveau compte";
 }
+
 <link rel="stylesheet" href="/css/test.css" />
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 <div class="page">
     <div class="container2">
         <div class="left">
-            <div class="login">Inscription</div>
+            <div class="login">@(User.IsInRole("Administrateur")?"Ajout du nouvel compte":"Inscription")</div>
             <div class="eula">
-                Veuillez vous inscrire pour commencer à explorer les films !<br />
+                @if (User.IsInRole("Administrateur"))
+                {
+                    <p>Veuillez inscrire les informations requises pour la creation du nouveau compte.</p>
+                }
+                else
+                {
+                    <p>Veuillez vous inscrire pour commencer à explorer les films ! </p>
+                }
+                <br />
                 <div asp-validation-summary="All" class="text-danger"></div><br />
                 <div asp-validation-for="UserName" class="text-danger" style="font-family: 'Montserrat', sans-serif;"></div><br />
                 <div asp-validation-for="Password" class="text-danger"></div><br />
@@ -29,7 +38,15 @@
                     <input asp-for="Password" type="password" id="password" class="input">
                     <label for="password" style="labelr"> Confirmer le Mot de passe</label>
                     <input asp-for="ConfirmPassword" type="password" id="password2" class="input">
-                    <input type="submit" id="submit" value="Inscription" color="red" class="Submitr" style="color: #f2f2f2">
+                    
+                    @if (User.IsInRole("Administrateur"))
+                    {
+                        <input type="submit" id="submit" value="Ajouter nouvel utilisateur" color="red" class="Submitr" style="color: #f2f2f2">
+                    }
+                    else
+                    {
+                        <input type="submit" id="submit" value="Inscription" color="red" class="Submitr" style="color: #f2f2f2">
+                    }
                 </form>
             </div>
 

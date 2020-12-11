@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ApplicationUser>
+
+@{
+    ViewBag.Title = "Tous les utilisateurs";
+}
+
+<div class="container">
+    <h3> Liste des utilisateurs </h3>
+    @if (ViewBag.LOL != null)
+    {
+        <h3 class="danger">Tu ne peux pas supprimer un compte administrateur. lol </h3>
+    }
+    <p>
+        <a asp-action="Register">Ajouter un nouveau utilisateur</a>
+    </p>
+
+    <div class="panel-group">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-10">
+
+                    <div id="@item.Id" class="panel @(User.Identity.Name==item.UserName? "panel-primary" : "panel-info" )" style="max-height:280px; min-height:280px; width:275px">
+
+                        <div class="panel-heading">
+                            <h4 style="font-weight:bold">@item.UserName</h4>
+                            <i style="font-size:smaller">Id: @item.Id </i>
+                        </div>
+
+                        <div class="panel-body">
+                            @item.Email <br /><br />
+                            <i> @(item.PhoneNumber != null ? "Téléphone: " + item.PhoneNumber : "Pas de téléphone") </i>
+                        </div>
+
+                        <div class="panel-footer">
+                            <form method="get" asp-action="Edit" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-warning">
+                                    Modifier
+                                </button>
+                            </form> <br />
+                            <form method="post" asp-action="Delete" asp-route-id="@item.Id">
+                                <span id="confirmeSpan_@item.Id" style="display:none">
+                                    <span>Êtes-vous certain?</span>
+                                    <button type="submit" class="btn btn-danger">Oui</button>
+                                    <a href="#@item.Id" class="btn btn-primary" 
+                                       onclick="confirmDelete('@item.Id', false)">Non</a>
+                                </span>
+                                <span id="supprimeSpan_@item.Id">
+                                    <a href="#@item.Id" class="btn btn-danger"
+                                       onclick="confirmDelete('@item.Id', true)">Delete</a>
+                                </span>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/delete.js"></script>
+}

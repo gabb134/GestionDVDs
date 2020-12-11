@@ -34,8 +34,6 @@ namespace GestionDVDs.Models
         public virtual DbSet<Realisateurs> Realisateurs { get; set; }
         public virtual DbSet<SousTitres> SousTitres { get; set; }
         public virtual DbSet<Supplements> Supplements { get; set; }
-        public virtual DbSet<TypesUtilisateur> TypesUtilisateur { get; set; }
-        public virtual DbSet<Utilisateurs> Utilisateurs { get; set; }
         public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
         public virtual DbSet<UtilisateursPreferences> UtilisateursPreferences { get; set; }
         public virtual DbSet<GestionDVDs.Models.Messages> Messages { get; set; }
@@ -313,42 +311,6 @@ namespace GestionDVDs.Models
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<TypesUtilisateur>(entity =>
-            {
-                entity.HasKey(e => e.TypeUtilisateur);
-
-                entity.Property(e => e.TypeUtilisateur)
-                    .HasMaxLength(1)
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<Utilisateurs>(entity =>
-            {
-                entity.HasKey(e => e.UtilisateurId);
-
-                entity.Property(e => e.Courriel)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.NomUtilisateur)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.TypeUtilisateur)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
-                entity.HasOne(d => d.TypeUtilisateurNavigation)
-                    .WithMany(p => p.Utilisateurs)
-                    .HasForeignKey(d => d.TypeUtilisateur)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Utilisate__TypeU__4336F4B9");
             });
 
             modelBuilder.Entity<UtilisateursPreferences>(entity =>

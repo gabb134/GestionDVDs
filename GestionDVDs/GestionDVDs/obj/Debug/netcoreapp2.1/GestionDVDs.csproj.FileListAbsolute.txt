@@ -233,3 +233,105 @@ C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.genruntimeconfig.cache
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.deps.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.runtimeconfig.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.runtimeconfig.dev.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.Views.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csprojAssemblyReference.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CoreCompileInputs.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorAssemblyInfo.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorAssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.AssemblyInfoInputs.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.AssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.TagHelpers.input.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.TagHelpers.output.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorCoreGenerate.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\_AuthLayout.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorTargetAssemblyInfo.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorTargetAssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.deps.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.runtimeconfig.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.runtimeconfig.dev.json
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.Views.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\bin\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csprojAssemblyReference.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CoreCompileInputs.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorAssemblyInfo.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorAssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.AssemblyInfoInputs.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.AssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.TagHelpers.input.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.TagHelpers.output.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorCoreGenerate.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\ListUsers.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Films\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Messages\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Create.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Delete.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Details.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\_AuthLayout.g.cshtml.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorTargetAssemblyInfo.cache
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.RazorTargetAssemblyInfo.cs
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.dll
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.pdb
+C:\Users\Ankit-PC\Gerald-Godin\Programmation Serveur 2\VS Projects\GestionDVDs - Copy\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete

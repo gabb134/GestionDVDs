@@ -196,7 +196,6 @@ namespace GestionDVDs.Controllers
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description", films.Format);
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom", films.ProducteurId);
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom", films.RealisateurId);
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
 
@@ -237,7 +236,6 @@ namespace GestionDVDs.Controllers
             ViewData["Format"] = new SelectList(_context.Formats, "FormatId", "Description", films.Format);
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom", films.ProducteurId);
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom", films.RealisateurId);
-            ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
 

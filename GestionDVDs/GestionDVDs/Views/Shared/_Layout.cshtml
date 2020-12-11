@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GestionDVDs</title>
-   
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -72,16 +72,36 @@
                     </li>
 
 
-                    @if (SignInManager.IsSignedIn(User))
-                    {
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrateur"))
+                    {   // Si utilisateur connecte en tant que admin
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Gestion admin <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Account" asp-action="Register">Ajouter un utilisateur</a></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="ListUsers">Liste des utilisateurs</a></li>
+                                
+                                <li><a>Bonjour @User.Identity.Name</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <form method="post" asp-controller="account" asp-action="logout" class="navbar-right">
+                                <button type="submit" class="btn btn-link navbar-btn nav-link text-dark">
+                                    Déconnexion
+                                </button>
+                            </form>
+                        </li>
+                    }
+                    else if (SignInManager.IsSignedIn(User))
+                    {   // whatever else
                         <form method="post" asp-controller="account" asp-action="logout" class="navbar-right">
-
                             <li class="nav-item">
                                 <button type="submit" class="btn btn-link navbar-btn nav-link text-dark">
                                     Déconnexion
                                 </button>
                             </li>
-
                         </form>
                     }
                     else
@@ -111,7 +131,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2020 - GestionDVDs</p>
+            <h4># Signed in as: @User.Identity.Name | Admin: @User.IsInRole("Administrateur") #</h4>
+            <p>&copy; 2020 - GestionDVDs </p>
         </footer>
     </div>
 
@@ -137,5 +158,6 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>
