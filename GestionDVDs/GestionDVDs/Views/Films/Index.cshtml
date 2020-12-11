@@ -6,12 +6,9 @@
 
 <br />
 
-<form id="frmSaisie" method="post">
-    <div class="container" style="margin: 20px">
-        <div class="col-md-12" style="margin-bottom:30px; margin-left:850px">
-
-            @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.pageSize, new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;" })
-        </div>
+<form id="frmSaisie" action="Films/Index" method="post">
+    <div class="container" style="margin: 20px;background-color:@ViewData["CouleurFond"]">
+     
         <div class="panel-group">
             <div class="row">
                 @foreach (var item in Model)
@@ -66,7 +63,8 @@
                                 }
                                 <p>
                                     <a asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a>
+                                    <a asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a> |
+                                    <a asp-controller="Emprunt" asp-action="Index" asp-route-id="@item.FilmId">Emprunter</a>
                                 </p>
                             </div>
                         </div>
