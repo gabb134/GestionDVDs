@@ -31,7 +31,7 @@ namespace GestionDVDs.Controllers
           }*/
         [Authorize]
     
-        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string pagesize)
+        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string autreUtilisateur)
         {
             //Pagination
             ViewData["CurrentSort"] = sortOrder;
@@ -109,8 +109,48 @@ namespace GestionDVDs.Controllers
             {
                 itemParPage = int.Parse(item);
             }
-                               
-                                    
+
+            //Tout les nom  des utilisateurs
+            /*  var alluserNames = from us in _context.Utilisateurs
+                                 select us.NomUtilisateur;
+
+              string nomUtilisateurs = "";
+
+              foreach(var nomUser in alluserNames)
+              {
+                  nomUtilisateurs = nomUser;
+              }
+
+              //dropdownlist
+              ViewBag.ListeNomUtilisateurs = new SelectList(alluserNames);*/
+           
+            IEnumerable<SelectListItem> items = _context.ApplicationUser.Select(c => new SelectListItem
+            {
+                //Here you can set 'Code' as the value field 
+                
+                Value = c.Id.ToString(),
+                Text = c.UserName
+
+
+            });
+            //Assign the value to ViewBag
+            ViewBag.DropdownValues = items;
+
+            //string utilisateurChoisi = items.;
+
+
+            //Les dvds des autres utilisateurs
+            /*       var utilisateurChoisis = _context.ApplicationUser.Where(u => u.UserName == utilisateurChoisi).Select(u => u.Id).First();
+
+              var lstDvdAutreUtilisateur = _context.EmpruntsFilms.Where(e => e.UtilisateurId == userId).Select(e => e.ExemplaireId).ToList();
+
+              List<string> lstDvdAutreUtilisateurString = lstDvdAutreUtilisateur.ConvertAll<string>(i => i.ToString().Substring(0, 6));
+
+              var filmsAutreUtilisateur = from m in _context.Films
+                          select m;
+
+              films = films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
+                  .Where(f => lstDvdAutreUtilisateurString.Contains(f.FilmId.ToString()));*/
 
 
             return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, itemParPage));
