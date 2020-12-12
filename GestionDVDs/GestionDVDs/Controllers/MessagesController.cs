@@ -43,6 +43,7 @@ namespace GestionDVDs.Controllers
 
             var messages = await _context.Messages
                 .FirstOrDefaultAsync(m => m.MessageId == id);
+            
             if (messages == null)
             {
                 return NotFound();

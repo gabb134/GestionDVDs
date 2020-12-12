@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionDVDs.Models
 {
-    public class ApplicationUser: IdentityUser
+    public partial class ApplicationUser: IdentityUser
     {
         public ApplicationUser()
         {
