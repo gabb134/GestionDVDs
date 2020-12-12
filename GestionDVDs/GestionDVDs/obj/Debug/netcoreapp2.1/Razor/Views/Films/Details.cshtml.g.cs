@@ -354,7 +354,7 @@ Write(Html.DisplayFor(model => model.TitreFrancais));
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(2710, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f583664af4c4306abf433cc4708574a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdcaeca3b7ce4989b6053cba783e1250", async() => {
                 BeginContext(2760, 8, true);
                 WriteLiteral("Modifier");
                 EndContext();
@@ -389,7 +389,7 @@ Write(Html.DisplayFor(model => model.TitreFrancais));
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(2780, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f54d42ac050640618b2975cb75fda707", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33a3267511044f7bb658706cd0619cb9", async() => {
                 BeginContext(2802, 27, true);
                 WriteLiteral("Retourner vers le catalogue");
                 EndContext();
