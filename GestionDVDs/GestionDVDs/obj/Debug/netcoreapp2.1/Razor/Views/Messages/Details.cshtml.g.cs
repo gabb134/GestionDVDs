@@ -158,7 +158,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n        </dt>\r\n        <dd>\r\n            ");
             EndContext();
             BeginContext(988, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee741397ac224efaa93f2e8966e525c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3554b060f6443fea6600f5939e12340", async() => {
                 BeginContext(1081, 37, false);
 #line 39 "C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\Views\Messages\Details.cshtml"
                                                                                                    Write(Html.DisplayFor(model => model.Corps));
@@ -192,7 +192,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1176, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "573ee90a04d34b59b368bebe52c64608", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33d1a46b0a5649f38137408ae1e557ab", async() => {
                 BeginContext(1198, 27, true);
                 WriteLiteral("Retour a la boite au lettre");
                 EndContext();

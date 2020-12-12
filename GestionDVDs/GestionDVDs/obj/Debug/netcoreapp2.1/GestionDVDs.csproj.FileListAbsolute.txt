@@ -286,3 +286,7 @@ C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.Views.pdb
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.genruntimeconfig.cache
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
+C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.cshtml.g.cs
+C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\ListUsers.cshtml.g.cs
+C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Emprunt\Index.cshtml.g.cs
+C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

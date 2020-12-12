@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {}
+    "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {
+    "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+        "projectUniqueName": "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
         "projectName": "GestionDVDs",
-        "projectPath": "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+        "projectPath": "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
         "packagesPath": "C:\\Users\\GabrielMarrero\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\obj\\",
+        "outputPath": "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

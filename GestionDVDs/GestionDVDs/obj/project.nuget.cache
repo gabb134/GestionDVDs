@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N9l+8JpchGanDhyxNLCtcUHeFUn4WyDbqTkADE5+xU+ardnDbqnmK1sSuvB37tOG/80TyPY/GAK5ajsMb3K7sA==",
+  "dgSpecHash": "wjj0tMZPXm4mDf7+5RFgOhLVaOBJ6/EQQ1qvQzLCEMXNhi2UgQJeWA/k43n1vUjj7pSs03Q/NmRuDK3ZwKWgcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\GabrielMarrero\\Downloads\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
+  "projectFilePath": "C:\\Users\\GabrielMarrero\\Desktop\\GestionDVDs\\GestionDVDs\\GestionDVDs\\GestionDVDs.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\GabrielMarrero\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",
