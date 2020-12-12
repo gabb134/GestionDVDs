@@ -254,3 +254,7 @@ C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\Gestion
 C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Edit.g.cshtml.cs
 C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\UtilisateursPreferences\Index.g.cshtml.cs
 C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Emprunt\Index.g.cshtml.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet3_9-12\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet3_9-12\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Account\ListUsers.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet3_9-12\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Emprunt\Index.cshtml.g.cs
+C:\Users\riben\Documents\Programmation web serveur II\Projets\Projet3\Projet3_9-12\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

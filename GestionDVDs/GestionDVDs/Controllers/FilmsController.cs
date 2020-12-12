@@ -105,7 +105,7 @@ namespace GestionDVDs.Controllers
                 ViewData["CouleurFond"] = "blue";
             int itemParPage = 0;
 
-            foreach(var item in userPreference)
+           foreach(var item in userPreference)
             {
                 itemParPage = int.Parse(item);
             }

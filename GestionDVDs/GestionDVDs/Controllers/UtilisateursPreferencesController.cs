@@ -96,6 +96,61 @@ namespace GestionDVDs.Controllers
             if (utilisateursPreferences == null)
             {
                 return NotFound();
+            };
+            if (id == "1")
+            {
+                var listeCouleursFond = new List<SelectListItem>
+                {
+                    new SelectListItem{ Text="Bleu", Value = "Bleu",  Selected = true},
+                    new SelectListItem{ Text="Vert", Value = "Vert" },
+                    new SelectListItem{ Text="Jaune", Value = "Jaune" },
+                 };
+                ViewData["Chiffres"] = "";
+                ViewData["valide"] = "true";
+                ViewData["Liste"] = listeCouleursFond;
+            }
+            else if (id == "2")
+            {
+                var listeCouleursTexte = new List<SelectListItem>
+                {
+                    new SelectListItem{ Text="Noir", Value = "Noir"},
+                    new SelectListItem{ Text="Bleu", Value = "Bleu" },
+                    new SelectListItem{ Text="Vert", Value = "Vert" },
+                    new SelectListItem{ Text="Jaune", Value = "Jaune" },
+                 };
+                ViewData["Chiffres"] = "";
+                ViewData["valide"] = "true";
+                ViewData["Liste"] = listeCouleursTexte;
+            }
+            else if (id == "3" || id == "4" || id == "5")
+            {
+                var listeCourriel = new List<SelectListItem>
+                {
+                    new SelectListItem{ Text="Oui", Value = "Oui"},
+                    new SelectListItem{ Text="Non", Value = "Non" },
+
+                 };
+                ViewData["Chiffres"] = "";
+                ViewData["valide"] = "true";
+                ViewData["Liste"] = listeCourriel;
+            }
+            else if (id == "6")
+            {
+                var listeCouleursTexte = new List<SelectListItem>
+                {
+                    new SelectListItem{ Text="~/background/default.jpg", Value = "~/background/default.jpg"},
+
+                 };
+                ViewData["Chiffres"] = "";
+                ViewData["valide"] = "true";
+                ViewData["Liste"] = listeCouleursTexte;
+            }
+            else if (id == "7")
+            {
+                
+                
+                ViewData["valide"] = "false";
+                ViewData["Chiffres"] = "<input  asp-for=\"Valeur\" id=\"Valeur\" name=\"Valeur\"  type=\"number\"   min=\"6\" max=\"99\" class = \"form - control\">";
             }
             ViewData["PreferenceId"] = new SelectList(_context.Preferences, "PreferenceId", "Description", utilisateursPreferences.PreferenceId);
             ViewData["UtilisateurId"] = new SelectList(_context.ApplicationUser, "Id", "Id", utilisateursPreferences.UtilisateurId);
@@ -110,11 +165,11 @@ namespace GestionDVDs.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("UtilisateurId,PreferenceId,Valeur")] UtilisateursPreferences utilisateursPreferences)
         {
-           /* if (id != utilisateursPreferences.UtilisateurId)
-            {
-                return NotFound();
-            }*/
-
+            /* if (id != utilisateursPreferences.UtilisateurId)
+             {
+                 return NotFound();
+             }*/
+            
             if (ModelState.IsValid)
             {
                 try
