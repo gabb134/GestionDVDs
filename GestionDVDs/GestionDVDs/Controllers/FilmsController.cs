@@ -31,7 +31,7 @@ namespace GestionDVDs.Controllers
           }*/
         [Authorize]
     
-        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string pagesize)
+        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string autreUtilisateur)
         {
             //Pagination
             ViewData["CurrentSort"] = sortOrder;
@@ -105,11 +105,14 @@ namespace GestionDVDs.Controllers
                 ViewData["CouleurFond"] = "blue";
             int itemParPage = 0;
 
-            foreach(var item in userPreference)
+           foreach(var item in userPreference)
             {
                 itemParPage = int.Parse(item);
             }
                                
+                                    
+
+
             return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, itemParPage));
         }
 

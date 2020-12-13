@@ -16,8 +16,12 @@
             <input type="hidden" asp-for="PreferenceId" />
             <div class="form-group">
                 <label asp-for="Valeur" class="control-label"></label>
-                <input asp-for="Valeur" class="form-control" />
+
                 <span asp-validation-for="Valeur" class="text-danger"></span>
+                @Html.Raw(ViewData["Chiffres"])
+               @if(ViewData["valide"].ToString()=="true"){ 
+                @Html.DropDownListFor(m => m.Valeur, new SelectList((System.Collections.IEnumerable)ViewData["Liste"], "Value", "Text"), new { @class = "form-control" })
+               }
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
