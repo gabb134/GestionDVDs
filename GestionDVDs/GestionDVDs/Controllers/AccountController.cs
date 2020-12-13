@@ -13,12 +13,16 @@ namespace GestionDVDs.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
         private readonly BDW56_424rContext _context;
-        public AccountController(BDW56_424rContext context, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+
+
+        public AccountController(BDW56_424rContext context, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
         [Microsoft.AspNetCore.Mvc.HttpGet]
         public IActionResult Register()
@@ -48,11 +52,11 @@ namespace GestionDVDs.Controllers
                 {
                     //await signInManager.SignInAsync(user, isPersistent: false); 
                     var preferences1 = new UtilisateursPreferences
-                {
-                    UtilisateurId = user.Id,
-                    PreferenceId = 1,
-                    Valeur = "Bleu"
-                }; _context.Add(preferences1);
+                    {
+                        UtilisateurId = user.Id,
+                        PreferenceId = 1,
+                        Valeur = "Bleu"
+                    }; _context.Add(preferences1);
                     var preferences2 = new UtilisateursPreferences
                     {
                         UtilisateurId = user.Id,
@@ -90,6 +94,13 @@ namespace GestionDVDs.Controllers
                         Valeur = "12"
                     }; _context.Add(preferences7);
 
+                    // $######################################################################################################################
+
+                    //  add automatic role assignment as utilisateur to all new users
+                    //  add option in EDIT to toggle between user/super-user
+                    
+                    // $######################################################################################################################
+                    
                     await _context.SaveChangesAsync();
 
                     if (signInManager.IsSignedIn(User) && User.IsInRole("Administrateur"))
@@ -245,6 +256,14 @@ namespace GestionDVDs.Controllers
 
                 return View("ListUsers");
             }
+        }
+
+        [HttpGet]
+        public IActionResult ListRoles()
+        {
+            var roles = roleManager.Roles;
+
+            return View(roles);
         }
 
     }

@@ -110,12 +110,7 @@ namespace GestionDVDs.Controllers
                 itemParPage = int.Parse(item);
             }
                                
-                                    
-
-
             return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, itemParPage));
-
-        
         }
 
         // GET: Films/Details/5
@@ -146,15 +141,15 @@ namespace GestionDVDs.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            var filmId = (DateTime.Now.Year.ToString().Substring(2)) + (DateTime.Now.Month.ToString());
+            /*var filmId = (DateTime.Now.Year.ToString().Substring(2)) + (DateTime.Now.Month.ToString());
             var films = from film in _context.Films
                         where film.FilmId.ToString().Substring(0,4) == filmId
                         select film;
 
             var filmCount = (films.Count() + 1).ToString().PadLeft(2, '0');
-            filmId += filmCount;
+            filmId += filmCount; */
 
-            ViewData["FilmId"] = filmId;
+            ViewData["FilmId"] = createFilmId();
             ViewData["UtilisateurMajId"] = _userManager.GetUserId(User);
 
             ViewData["Categorie"] = new SelectList(_context.Categories, "CategorieId", "Description");
@@ -162,6 +157,14 @@ namespace GestionDVDs.Controllers
             ViewData["ProducteurId"] = new SelectList(_context.Producteurs, "ProducteurId", "Nom");
             ViewData["RealisateurId"] = new SelectList(_context.Realisateurs, "RealisateurId", "Nom");
           //  ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel");
+            return View();
+        }
+
+        // GET: Film/CreateBulk
+        [Authorize]
+        [HttpGet]
+        public IActionResult CreateBulk()
+        {
             return View();
         }
 
@@ -187,6 +190,165 @@ namespace GestionDVDs.Controllers
            // ViewData["UtilisateurMajid"] = new SelectList(_context.Utilisateurs, "UtilisateurId", "Courriel", films.UtilisateurMajId);
             return View(films);
         }
+
+        // POST: Film/CreateBulk
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateBulk(FilmCourt model)
+        {
+            string userId = _userManager.GetUserId(User);
+            DateTime dateNow = DateTime.Now;
+            string xtra = "Ce film a été ajouté en mode abrégé.";
+            // f1
+            if (model.Titre1 != null) {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre1,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f2
+            if (model.Titre2 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre2,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f3
+            if (model.Titre3 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre3,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f4
+            if (model.Titre4 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre4,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f5
+            if (model.Titre5 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre5,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f6
+            if (model.Titre6 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre6,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f7
+            if (model.Titre7 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre7,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f8
+            if (model.Titre8 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre8,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f9
+            if (model.Titre9 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre9,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }// f10
+            if (model.Titre10 != null)
+            {
+                var film = new Films
+                {
+                    FilmId = int.Parse(createFilmId()),
+                    TitreFrancais = model.Titre10,
+                    DateMaj = dateNow,
+                    UtilisateurMajId = userId,
+                    Xtra = xtra,
+                };
+                _context.Add(film);
+                await _context.SaveChangesAsync();
+            }
+            
+
+            return RedirectToAction("Index");
+        }
+
+
+        public String createFilmId()
+        {
+            var filmId = (DateTime.Now.Year.ToString().Substring(2)) + (DateTime.Now.Month.ToString());
+            var films = from film in _context.Films
+                        where film.FilmId.ToString().Substring(0, 4) == filmId
+                        select film;
+
+            var filmCount = (films.Count() + 1).ToString().PadLeft(2, '0');
+            filmId += filmCount;
+
+            return filmId;
+        }
+
 
         // GET: Films/Edit/5
         [Authorize]

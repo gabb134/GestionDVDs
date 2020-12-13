@@ -1,0 +1,79 @@
+﻿@model GestionDVDs.Models.FilmCourt
+
+@{
+    ViewData["Title"] = "Ajouter plusieurs films";
+}
+
+
+<h3>Ajouter plusieurs DVDs</h3>
+<p>
+    <a asp-action="Create">Ajouter un seul DVD</a>
+</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateBulk">
+            <div class="form-group">
+                <label asp-for="Titre1" class="control-label">Titre 01</label>
+                <input asp-for="Titre1" class="form-control" />
+                <span asp-validation-for="Titre1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre2" class="control-label">Titre 02</label>
+                <input asp-for="Titre2" class="form-control" />
+                <span asp-validation-for="Titre2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre3" class="control-label">Titre 03</label>
+                <input asp-for="Titre3" class="form-control" />
+                <span asp-validation-for="Titre3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre4" class="control-label">Titre 04</label>
+                <input asp-for="Titre4" class="form-control" />
+                <span asp-validation-for="Titre4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre5" class="control-label">Titre 05</label>
+                <input asp-for="Titre5" class="form-control" />
+                <span asp-validation-for="Titre5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre6" class="control-label">Titre 06</label>
+                <input asp-for="Titre6" class="form-control" />
+                <span asp-validation-for="Titre6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre7" class="control-label">Titre 07</label>
+                <input asp-for="Titre7" class="form-control" />
+                <span asp-validation-for="Titre7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre8" class="control-label">Titre 08</label>
+                <input asp-for="Titre8" class="form-control" />
+                <span asp-validation-for="Titre8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre9" class="control-label">Titre 09</label>
+                <input asp-for="Titre9" class="form-control" />
+                <span asp-validation-for="Titre9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre10" class="control-label">Titre 10</label>
+                <input asp-for="Titre10" class="form-control" />
+                <span asp-validation-for="Titre10" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ajouter au catalogue" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retourner vers le catalogue</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

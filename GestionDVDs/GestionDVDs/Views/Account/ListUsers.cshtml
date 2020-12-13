@@ -6,12 +6,11 @@
 
 <div class="container">
     <h3> Liste des utilisateurs </h3>
-    @if (ViewBag.LOL != null)
-    {
-        <h3 class="danger">Tu ne peux pas supprimer un compte administrateur. lol </h3>
-    }
     <p>
         <a asp-action="Register">Ajouter un nouveau utilisateur</a>
+    </p>
+    <p>
+        <a asp-action="SuperUsers">Ajouter/Supprimer des super-utilisateurs</a>
     </p>
 
     <div class="panel-group">
