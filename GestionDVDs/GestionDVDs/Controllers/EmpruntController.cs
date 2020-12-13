@@ -81,7 +81,7 @@ namespace GestionDVDs.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(Index), nameof(Films), films);
+            return RedirectToAction("MesDVDs", "Films", films);
         }
 
         /*

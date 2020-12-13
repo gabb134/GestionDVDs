@@ -9,10 +9,9 @@
 
 <form id="frmSaisie" action="Films/Index" method="post">
     <div class="container" style="margin: 20px">
-        <div class="col-md-12" style="margin-bottom:30px; margin-left:-15px">
-
-            @Html.DropDownList("DropdownValues",null,"Les Dvds des autres utilisateurs", new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;",value="autreUtilisateur" })
-        </div>
+      <div class="col-md-12" style="margin-bottom:30px; margin-left:-15px">
+         @*Html.DropDownList("DropdownValues",null,"Les Dvds des autres utilisateurs", new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;",value="autreUtilisateur" }) *@
+     </div>
 
         <div class="panel-group">
             <div class="row">
@@ -67,6 +66,7 @@
                                         </p> }
                                 }
                                 <p>
+                                    <a asp-controller="Emprunt" asp-action="Emprunter" asp-route-id="@item.FilmId">Emprunter</a> |
                                     <a asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |
                                     <a asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a>
                                 </p>
