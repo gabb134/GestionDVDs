@@ -143,6 +143,15 @@ namespace GestionDVDs.Controllers
         [Microsoft.AspNetCore.Mvc.HttpPost]
         public async Task<IActionResult> Logout()
         {
+
+            TempData["CouleurFond"] = null;
+            TempData["CouleurText"] = null;
+            TempData["EnvoiCourrielAjout"] = null;
+            TempData["EnvoiCourrielApprobation"] = null;
+            TempData["EnvoiCourrielSuppression"] = null;
+            TempData["ImageFond"] = null;
+            TempData["NbFilmsParPage"] = null;
+
             await signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }

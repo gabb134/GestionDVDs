@@ -79,18 +79,42 @@ namespace GestionDVDs.Controllers
             // user qui est connecté
             string userName = User.Identity.Name;
 
-            var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First();
+            var userId = _context.ApplicationUser.Where(u => u.UserName == userName).Select(u => u.Id).First(); //_userManager.GetUserId(User);
 
             // utilisateurs preferences
-            var userColor = from u in _context.UtilisateursPreferences
+            var userColor = (from u in _context.UtilisateursPreferences
                             where u.UtilisateurId == userId && u.PreferenceId == 1
-                            select u.Valeur;
-            var userTextColor = from u in _context.UtilisateursPreferences
-                            where u.UtilisateurId == userId && u.PreferenceId == 2
-                            select u.Valeur;
-            var userPreference = from u in _context.UtilisateursPreferences
-                                 where u.UtilisateurId == userId && u.PreferenceId == 7
-                                 select u.Valeur;
+                            select u.Valeur).ToList();
+            var userTextColor = (from u in _context.UtilisateursPreferences
+                                 where u.UtilisateurId == userId && u.PreferenceId == 2
+                                 select u.Valeur).ToList();
+            var userEmailAdd = (from u in _context.UtilisateursPreferences
+                                where u.UtilisateurId == userId && u.PreferenceId == 3
+                                select u.Valeur).ToList();
+            var userEmailApp = (from u in _context.UtilisateursPreferences
+                                where u.UtilisateurId == userId && u.PreferenceId == 4
+                                select u.Valeur).ToList();
+            var userEmailDel = (from u in _context.UtilisateursPreferences
+                                where u.UtilisateurId == userId && u.PreferenceId == 5
+                                select u.Valeur).ToList();
+            var userImageBack = (from u in _context.UtilisateursPreferences
+                                where u.UtilisateurId == userId && u.PreferenceId == 6
+                                select u.Valeur).ToList();
+            var userPreference = (from u in _context.UtilisateursPreferences
+                                  where u.UtilisateurId == userId && u.PreferenceId == 7
+                                  select u.Valeur).ToList();
+
+            TempData["CouleurFond"] = userColor[0];
+            TempData["CouleurText"] = userTextColor[0];
+            TempData["EnvoiCourrielAjout"] = userEmailAdd[0];
+            TempData["EnvoiCourrielApprobation"] = userEmailApp[0];
+            TempData["EnvoiCourrielSuppression"] = userEmailDel[0];
+            TempData["ImageFond"] = userImageBack[0];
+            TempData["NbFilmsParPage"] = userPreference[0];
+
+            //TempData.Peek("CouleurFond");
+
+
             string couleurTexte = "";
             foreach (var item in userTextColor)
             {
@@ -109,11 +133,17 @@ namespace GestionDVDs.Controllers
             {
                 itemParPage = int.Parse(item);
             }
-                               
-                                    
 
+            IEnumerable<SelectListItem> items = _context.ApplicationUser.Where(u => u.Id != userId && u.Id != "1").Select(c => new SelectListItem //On ne peut pas voir les dvd de l'admin et de l'utilisateur courant 
+            {
+                //Here you can set 'Code' as the value field 
+                Value = c.Id.ToString(),
+                Text = c.UserName
+            });
+            //Assign the value to ViewBag
+            ViewBag.DropdownValues = items;
 
-            return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, itemParPage));
+            return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, Convert.ToInt32(TempData.Peek("NbFilmsParPage"))));
         }
 
         // GET: Films/Details/5
