@@ -6,6 +6,7 @@ using GestionDVDs.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data.SqlClient;
 
 namespace GestionDVDs.Controllers
 {
@@ -16,6 +17,7 @@ namespace GestionDVDs.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly BDW56_424rContext _context;
 
+        private string connString = "Server=tcp:424sql.cgodin.qc.ca,5433;Database=BDW56_424r;Trusted_Connection=True;User ID=W56equipe424r; Password=Secret36512;Integrated Security=false";
 
         public AccountController(BDW56_424rContext context, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
@@ -94,12 +96,14 @@ namespace GestionDVDs.Controllers
                         Valeur = "12"
                     }; _context.Add(preferences7);
 
-                    // $######################################################################################################################
-
-                    //  add automatic role assignment as utilisateur to all new users
-                    //  add option in EDIT to toggle between user/super-user
-                    
-                    // $######################################################################################################################
+                    using (SqlConnection con = new SqlConnection(connString))
+                    {
+                        con.Open();
+                        string requete = "INSERT INTO AspNetUserRoles values ('" + user.Id + "', 'U')";
+                        SqlCommand com = new SqlCommand(requete, con);
+                        com.ExecuteNonQuery();
+                        con.Close();
+                    }
                     
                     await _context.SaveChangesAsync();
 
@@ -165,9 +169,17 @@ namespace GestionDVDs.Controllers
             {
                 return NotFound();
             }
+            
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                string requete = "SELECT RoleId FROM AspNetUserRoles WHERE UserId = '" + Id + "'";
+                SqlCommand com = new SqlCommand(requete, con);
+                ViewData["Roles"] = com.ExecuteScalar().ToString();
+                con.Close();
+            }
 
             var userRoles = await userManager.GetRolesAsync(user);
-            ViewData["Roles"] = new SelectList(_context.Roles, "Id", "Name");
 
             var model = new EditUserViewModel
             {
@@ -235,11 +247,17 @@ namespace GestionDVDs.Controllers
                     var listePreferences = from preference in _context.UtilisateursPreferences
                                            where preference.UtilisateurId == id
                                            select preference;
-
                     foreach (var preference in listePreferences)
                         _context.UtilisateursPreferences.Remove(preference);
-
+                    
                     _context.SaveChanges();
+
+                    var listeEmprunts = from emprunt in _context.EmpruntsFilms
+                                        where emprunt.UtilisateurId == id
+                                        select emprunt;
+                    foreach (var emprunt in listeEmprunts)
+                        _context.EmpruntsFilms.Remove(emprunt);
+                    
 
                     var result = await userManager.DeleteAsync(user);
 
@@ -258,12 +276,45 @@ namespace GestionDVDs.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult ListRoles()
-        {
-            var roles = roleManager.Roles;
 
-            return View(roles);
+        /*
+         *      Fonctions pour GESTION DES ROLES
+         */
+
+
+        [HttpPost]
+        public async Task<IActionResult> ChangerRole(String id)
+        {
+            var role = "N/A";
+
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+                string requete = "SELECT RoleId FROM AspNetUserRoles WHERE UserId = '" + id + "'";
+                SqlCommand com = new SqlCommand(requete, con);
+                role = com.ExecuteScalar().ToString();
+                con.Close();
+            }
+
+            string requete2 = "";
+
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                con.Open();
+
+                if (role == "S")
+                    requete2 = "UPDATE AspNetUserRoles SET RoleId = 'U' WHERE UserId = '" + id + "'";
+                else if (role == "U")
+                    requete2 = "UPDATE AspNetUserRoles SET RoleId = 'S' WHERE UserId = '" + id + "'";
+                else if (role == "A")
+                    return RedirectToAction("Contact", "Home");
+
+                SqlCommand com = new SqlCommand(requete2, con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+
+            return RedirectToAction("ListUsers");
         }
 
     }

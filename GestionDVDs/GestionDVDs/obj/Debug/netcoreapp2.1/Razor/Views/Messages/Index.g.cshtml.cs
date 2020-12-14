@@ -65,7 +65,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n<h3>Boite au lettres</h3>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(143, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fd9a67ff4bd41daaf76301233e7c069", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6a45f8308024aa0964ae99389307101", async() => {
                 BeginContext(166, 27, true);
                 WriteLiteral("Composer un nouveau message");
                 EndContext();
@@ -145,7 +145,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(979, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6789d43f93b2452f8ad5394129f6e156", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "faf31cd672ab4e3a81b258523287412a", async() => {
                 BeginContext(1034, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -180,7 +180,7 @@ using GestionDVDs.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1065, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1053cbaa4d6e494ab1009737fe2ba3f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5816217210764667bae6ac21150346ce", async() => {
                 BeginContext(1119, 9, true);
                 WriteLiteral("Supprimer");
                 EndContext();

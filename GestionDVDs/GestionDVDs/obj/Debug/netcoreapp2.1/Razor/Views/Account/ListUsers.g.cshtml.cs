@@ -72,7 +72,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <h3> Liste des utilisateurs </h3>\r\n    <p>\r\n        ");
             EndContext();
             BeginContext(175, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1c7175154614fdebfebb43d65dfe24d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d5f1c87a5e74433a8a4c8674396d43a", async() => {
                 BeginContext(200, 30, true);
                 WriteLiteral("Ajouter un nouveau utilisateur");
                 EndContext();
@@ -94,7 +94,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n    </p>\r\n    <p>\r\n        ");
             EndContext();
             BeginContext(263, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa822f2596214800a589816301a7463b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db4087acd0074a0fb965af41cc815577", async() => {
                 BeginContext(290, 40, true);
                 WriteLiteral("Ajouter/Supprimer des super-utilisateurs");
                 EndContext();
@@ -183,7 +183,7 @@ WriteAttributeValue(" ", 589, User.Identity.Name==item.UserName? "panel-primary"
             WriteLiteral(" </i>\r\n                        </div>\r\n\r\n                        <div class=\"panel-footer\">\r\n                            ");
             EndContext();
             BeginContext(1302, 267, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff12fa9ccc1a486e996d51cf3a6d1085", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b47e0eef9cc04372b723a457c75da1ca", async() => {
                 BeginContext(1363, 199, true);
                 WriteLiteral("\r\n                                <button type=\"submit\" class=\"btn btn-warning\">\r\n                                    Modifier\r\n                                </button>\r\n                            ");
                 EndContext();
@@ -222,7 +222,7 @@ WriteAttributeValue(" ", 589, User.Identity.Name==item.UserName? "panel-primary"
             WriteLiteral(" <br />\r\n                            ");
             EndContext();
             BeginContext(1606, 848, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2e0c9066a6b42f18ee2a17a4c3f69dd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49ff17a2efad4637b04fbb081fb41f17", async() => {
                 BeginContext(1670, 39, true);
                 WriteLiteral("\r\n                                <span");
                 EndContext();
@@ -343,7 +343,7 @@ WriteAttributeValue("", 2348, item.Id, 2348, 8, false);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2649, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c83ae0eff0104777b7da23fa7e9795a0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49690fa965b24e9594710e4f55d9effa", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

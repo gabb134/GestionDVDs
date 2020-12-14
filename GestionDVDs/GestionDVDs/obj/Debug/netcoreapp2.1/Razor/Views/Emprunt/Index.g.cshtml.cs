@@ -67,7 +67,7 @@ using GestionDVDs.Models;
             WriteLiteral("\r\n<h3>Emprunt</h3>\r\n\r\n<div>\r\n    <hr />\r\n    ");
             EndContext();
             BeginContext(123, 3531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60bab2d7b3da4da2bcf99b989ef8b254", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e765dd6f414b42a2a3d88ae9d1cdb521", async() => {
                 BeginContext(152, 72, true);
                 WriteLiteral("\r\n        <dl class=\"dl-horizontal\">\r\n            <dt>\r\n                ");
                 EndContext();
@@ -392,7 +392,7 @@ using GestionDVDs.Models;
                 WriteLiteral("\r\n            </dd>\r\n        </dl>\r\n        ");
                 EndContext();
                 BeginContext(3499, 68, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cdb89e201d2d48b981055345c9e8b7ff", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47d0c58a5d4e419e88700e40e99ba5e6", async() => {
                     BeginContext(3554, 9, true);
                     WriteLiteral("Emprunter");
                     EndContext();
@@ -427,7 +427,7 @@ using GestionDVDs.Models;
                 WriteLiteral(" | ");
                 EndContext();
                 BeginContext(3570, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef698717441246ea8362b286eb25dc62", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b807e55c86c443f1ae81e4e9aca9c6c0", async() => {
                     BeginContext(3610, 27, true);
                     WriteLiteral("Retourner vers le catalogue");
                     EndContext();
