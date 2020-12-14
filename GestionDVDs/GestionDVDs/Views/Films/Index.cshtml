@@ -7,11 +7,11 @@
 
 <br />
 
-<form id="frmSaisie" action="Films/Index" method="post">
-    <div class="container" style="margin: 20px">
-      <div class="col-md-12" style="margin-bottom:30px; margin-left:-15px">
-         @*Html.DropDownList("DropdownValues",null,"Les Dvds des autres utilisateurs", new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;",value="autreUtilisateur" }) *@
-     </div>
+<form id="frmSaisie" action="" method="post">
+    <div class="container" style="margin: 20px;">
+        <div class="col-md-12" style="margin-bottom:30px; margin-left:-15px">
+            @Html.DropDownList("idUtilisateurSelectionee", (IEnumerable<SelectListItem>)ViewBag.DropdownValues, "Les Dvds des autres utilisateurs", new { id = "ddlPagesize", @class = "form-control", onchange = "this.form.submit()", style = "width:270px;" })
+        </div>
 
         <div class="panel-group">
             <div class="row">
@@ -50,21 +50,23 @@
                                         </a>
                                     }
                                 }
-                                <p>
+                                <p></p>
+                                @*<p>
                                     @Html.DisplayFor(modelItem => item.CategorieNavigation.Description)
                                 </p>
                                 <p>
                                     @Html.DisplayFor(modelItem => item.FormatNavigation.Description)
                                 </p>
-                                @{ if (item.Producteur != null)
+                                { if (item.Producteur != null)
                                     {
                                         <p>
                                             Produceur: @Html.DisplayFor(modelItem => item.Producteur.Nom)
                                         </p>
                                         <p>
                                             Realisateur: @Html.DisplayFor(modelItem => item.Realisateur.Nom)
-                                        </p> }
-                                }
+                                        </p> 
+                                    }
+                                }*@
                                 <p>
                                     <a asp-controller="Emprunt" asp-action="Emprunter" asp-route-id="@item.FilmId">Emprunter</a> |
                                     <a asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |

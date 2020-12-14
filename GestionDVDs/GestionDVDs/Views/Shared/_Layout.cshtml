@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body style="background-color:@if (TempData.Peek("CouleurFond") != null) { @TempData.Peek("CouleurFond").ToString() } ">
     <nav class="navbar navbar-inverse navbar-fixed-top ">
         <div class="container">
             <a class="navbar-brand " asp-area="" asp-controller="Films" asp-action="Index" style="margin-top:-5px;">
@@ -40,7 +40,7 @@
                 <ul class="nav navbar-nav">
 
                     <li><a asp-area="" asp-controller="Films" asp-action="Index">DVDs</a></li>
-                    <li><a asp-area="" asp-controller="Films" asp-action="MesDVDs">Mes DVDs</a></li>
+                    <li><a asp-area="" asp-controller="MesDVDs" asp-action="Index">Mes DVDs</a></li>
                     <li><a asp-area="" asp-controller="Films" asp-action="Create">Ajouter un DVD</a></li>
                     <li><a asp-area="" asp-controller="Messages" asp-action="Index">Messagerie</a></li>
                     <li><a asp-area="" asp-controller="UtilisateursPreferences" asp-action="Index">Preferences</a></li>
