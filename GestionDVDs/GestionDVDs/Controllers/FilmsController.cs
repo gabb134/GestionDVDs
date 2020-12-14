@@ -31,7 +31,7 @@ namespace GestionDVDs.Controllers
           }*/
         [Authorize]
     
-        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string autreUtilisateur)
+        public async Task<IActionResult> Index(string searchString, string sortOrder, string currentFilter, int? pageNumber, string idUtilisateurSelectionee)
         {
             //Pagination
             ViewData["CurrentSort"] = sortOrder;
@@ -142,6 +142,39 @@ namespace GestionDVDs.Controllers
             });
             //Assign the value to ViewBag
             ViewBag.DropdownValues = items;
+
+
+            var nomutilisateurChoisi = from u in _context.ApplicationUser
+                                       where u.Id == idUtilisateurSelectionee
+                                       select u.UserName;
+
+
+            string utilisateurChoisi = "";
+            foreach (var nomUser in nomutilisateurChoisi)
+            {
+                utilisateurChoisi = nomUser.ToString();
+            }
+
+            //Les dvds des autres utilisateurs
+            if (utilisateurChoisi != "")
+            {
+                // var utilisateurChoisis = _context.ApplicationUser.Where(u => u.UserName == utilisateurChoisi).Select(u => u.Id).First();
+
+
+                var lstDvdAutreUtilisateur = _context.EmpruntsFilms.Where(e => e.UtilisateurId == idUtilisateurSelectionee).Select(e => e.ExemplaireId).ToList();
+
+                List<string> lstDvdAutreUtilisateurString = lstDvdAutreUtilisateur.ConvertAll<string>(i => i.ToString().Substring(0, 6));
+
+                var filmsAutreUtilisateur = from m in _context.Films
+                                            select m;
+
+                films = films.Include(f => f.CategorieNavigation).Include(f => f.FormatNavigation).Include(f => f.Producteur).Include(f => f.Realisateur).Include(f => f.UtilisateurMaj)
+                    .Where(f => lstDvdAutreUtilisateurString.Contains(f.FilmId.ToString()));
+
+
+
+            }
+
 
             return View(await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), pageNumber ?? 1, Convert.ToInt32(TempData.Peek("NbFilmsParPage"))));
         }
