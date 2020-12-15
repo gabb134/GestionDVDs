@@ -47,25 +47,9 @@
                                     }
                                 }
                                 <p></p>
-                                @*<p>
-                                    @Html.DisplayFor(modelItem => item.CategorieNavigation.Description)
-                                </p>
                                 <p>
-                                    @Html.DisplayFor(modelItem => item.FormatNavigation.Description)
-                                </p>
-                                { if (item.Producteur != null)
-                                    {
-                                        <p>
-                                            Produceur: @Html.DisplayFor(modelItem => item.Producteur.Nom)
-                                        </p>
-                                        <p>
-                                            Realisateur: @Html.DisplayFor(modelItem => item.Realisateur.Nom)
-                                        </p> }
-                                }*@
-                                <p>
-                                    <a asp-controller="Film" asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |
-                                    <a asp-controller="Film" asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a> |
-                                    <a asp-controller="Emprunt" asp-action="Emprunter" asp-route-id="@item.FilmId">Emprunter</a>
+                                    <a asp-controller="Films" asp-action="Edit" asp-route-id="@item.FilmId">Modifier</a> |
+                                    <a asp-controller="Films" asp-action="Delete" asp-route-id="@item.FilmId">Supprimer</a>
                                 </p>
                             </div>
                         </div>

@@ -57,31 +57,31 @@ namespace GestionDVDs.Controllers
                     {
                         UtilisateurId = user.Id,
                         PreferenceId = 1,
-                        Valeur = "Bleu"
+                        Valeur = "Cyan"
                     }; _context.Add(preferences1);
                     var preferences2 = new UtilisateursPreferences
                     {
                         UtilisateurId = user.Id,
                         PreferenceId = 2,
-                        Valeur = "Noir"
+                        Valeur = "Black"
                     };_context.Add(preferences2);
                     var preferences3 = new UtilisateursPreferences
                     {
                         UtilisateurId = user.Id,
                         PreferenceId = 3,
-                        Valeur = "Oui"
+                        Valeur = "True"
                     }; _context.Add(preferences3);
                     var preferences4 = new UtilisateursPreferences
                     {
                         UtilisateurId = user.Id,
                         PreferenceId = 4,
-                        Valeur = "Oui"
+                        Valeur = "True"
                     }; _context.Add(preferences4);
                     var preferences5 = new UtilisateursPreferences
                     {
                         UtilisateurId = user.Id,
                         PreferenceId = 5,
-                        Valeur = "Oui"
+                        Valeur = "True"
                     }; _context.Add(preferences5);
                     var preferences6 = new UtilisateursPreferences
                     {

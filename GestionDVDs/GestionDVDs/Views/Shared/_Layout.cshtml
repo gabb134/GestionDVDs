@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body style="background-color:@if (TempData.Peek("CouleurFond") != null) { @TempData.Peek("CouleurFond").ToString() } ">
+<body style="background-color:@if (TempData.Peek("CouleurFond") != null) { @TempData.Peek("CouleurFond").ToString() }; color: @if (TempData.Peek("CouleurText") != null) { @TempData.Peek("CouleurText").ToString() }">
     <nav class="navbar navbar-inverse navbar-fixed-top ">
         <div class="container">
             <a class="navbar-brand " asp-area="" asp-controller="Films" asp-action="Index" style="margin-top:-5px;">
@@ -45,17 +45,6 @@
                     <li><a asp-area="" asp-controller="Messages" asp-action="Index">Messagerie</a></li>
                     <li><a asp-area="" asp-controller="UtilisateursPreferences" asp-action="Index">Preferences</a></li>
 
-                    <!-- Dropdown -->
-                    <!--   <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            DVDs
-        </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" asp-area="" asp-controller="Films" asp-action="Index"> DVDs de tous les utilisateurs</a><br />
-            <a class="dropdown-item" href="#">DVDs en main</a><br />
-            <a class="dropdown-item" href="#">DVDs d’un autre utilisateur</a><br />
-        </div>
-    </li>-->
                     <li>
                         <div class="navbar-left" style="margin-top:11px;">
                             <form class="form-inline my-2 my-lg-0" asp-controller="Films" asp-action="Index" method="get">
@@ -131,7 +120,6 @@
         @RenderBody()
         <hr />
         <footer>
-            <h4># Signed in as: @User.Identity.Name | Admin: @User.IsInRole("Administrateur") #</h4>
             <p>&copy; 2020 - GestionDVDs </p>
         </footer>
     </div>

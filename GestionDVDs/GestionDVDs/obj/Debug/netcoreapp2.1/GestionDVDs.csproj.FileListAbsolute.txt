@@ -376,3 +376,4 @@ C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\GestionDVD
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.pdb
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.genruntimeconfig.cache
 C:\Users\GabrielMarrero\Downloads\GestionDVDs\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\GestionDVDs.csproj.CopyComplete
+C:\Users\Etudiant\Desktop\420-W56 web-serveur II\GestionDVDs\GestionDVDs\GestionDVDs\obj\Debug\netcoreapp2.1\Razor\Views\MesDVDs\Details.g.cshtml.cs

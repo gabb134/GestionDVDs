@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GestionDVDs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -51,6 +52,30 @@ namespace GestionDVDs.Controllers
 
 
             return View(nameof(Index), await PaginatedList<Films>.CreateAsync(films.AsNoTracking(), 1, Convert.ToInt32(TempData.Peek("NbFilmsParPage"))));
+        }
+
+        // GET: Films/Details/5
+        [Authorize]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var films = await _context.Films
+                .Include(f => f.CategorieNavigation)
+                .Include(f => f.FormatNavigation)
+                .Include(f => f.Producteur)
+                .Include(f => f.Realisateur)
+                .Include(f => f.UtilisateurMaj)
+                .FirstOrDefaultAsync(m => m.FilmId == id);
+            if (films == null)
+            {
+                return NotFound();
+            }
+
+            return View(films);
         }
     }
 }

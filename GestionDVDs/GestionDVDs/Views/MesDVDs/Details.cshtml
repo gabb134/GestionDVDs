@@ -1,0 +1,96 @@
+﻿@model GestionDVDs.Models.Films
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>@Html.DisplayFor(model => model.TitreFrancais)</h3>
+<h4 style="font-style:italic">@Html.DisplayFor(model => model.TitreOriginal) (@Html.DisplayFor(model => model.AnneeSortie))</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Resume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Resume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DureeMinutes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DureeMinutes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmOriginal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilmOriginal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePochette)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImagePochette)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NbDisques)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NbDisques)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VersionEtendue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VersionEtendue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Xtra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Xtra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CategorieNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CategorieNavigation.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FormatNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FormatNavigation.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Producteur)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Producteur.Nom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Realisateur)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Realisateur.Nom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UtilisateurMaj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UtilisateurMaj.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateMaj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateMaj)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FilmId">Modifier</a> |
+    <a asp-action="Index">Retourner vers mesDVDs</a>
+</div>

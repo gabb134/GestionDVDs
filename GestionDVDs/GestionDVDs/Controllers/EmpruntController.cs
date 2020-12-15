@@ -72,7 +72,8 @@ namespace GestionDVDs.Controllers
             }
             else
             {
-                _context.Remove(emprunt);
+                if(emprunt != null)
+                    _context.Remove(emprunt);
 
                 EmpruntsFilms nouvelEmprunt = new EmpruntsFilms { ExemplaireId = idEmprunt, UtilisateurId = _userManager.GetUserId(User), DateEmprunt = DateTime.Now };
 
@@ -81,85 +82,7 @@ namespace GestionDVDs.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("MesDVDs", "Films", films);
+            return RedirectToAction("Index", "MesDVDs", films);
         }
-
-        /*
-        // GET: Emprunt/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Emprunt/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Emprunt/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Emprunt/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Emprunt/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Emprunt/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Emprunt/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        */
     }
 }
